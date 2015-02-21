@@ -1,0 +1,41 @@
+
+
+nav{
+	background-color: #ff0000;
+	}
+
+
+nav a{
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 30px;
+}
+
+
+
+title{
+	font-size: 50px;
+}
+
+#about{
+	font-size: 40px;
+}
+
+#help{
+	font-size: 40px;
+}
+
+#donate{
+	font-size: 40px;
+}
+
+.col-centered{
+	float: none;
+	margin: 0 auto;
+}
+#selectLevel {
+	width: 300px;
+}
+#displayLevel{
+	width: 30px; 
+	height: 15px;
+}
