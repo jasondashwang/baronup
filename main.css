@@ -1,17 +1,16 @@
-
-
+#Opponent {
+	float: right;
+}
+.Champions {
+	display: inline-block;
+}
 nav{
 	background-color: #ff0000;
 	}
-
-
 nav a{
 	font-family: 'Fjalla One', sans-serif;
 	font-size: 30px;
 }
-
-
-
 title{
 	font-size: 50px;
 }
