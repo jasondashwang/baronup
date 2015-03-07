@@ -22,7 +22,11 @@
 	<script type="Calculator.java"></script>
 	<script src="foundation/js/vendor/modernizr.js"></script>
 </head>
+
 <body>
+
+<div>
+<!-- Navigation -->
 	<nav class="top-bar" data-topbar role="navigation">
 		<ul class="title-area">
 			<li class="name"> <h1> <a href='index.html'> BaronUp </a> </li>
@@ -59,21 +63,24 @@
 	</div>
 
 
+	<!-- Level Slider -->
 		Level:
-<div class="row">
-  <div class="small-10 medium-11 columns">
-    <div class="range-slider" data-slider="1" data-options="display_selector: #sliderOutput; start: 1; end: 18;">
-      <span class="range-slider-handle" role="slider" tabindex="0" aria-valuemin="1" aria-valuemax="18" aria-valuenow="1"></span>
-      <span class="range-slider-active-segment" style="width: 50%;"></span>
-    </div>
-  </div>
-  <div class="small-2 medium-1 columns">
-    <span id="sliderOutput" style="display: block;margin-top: 17px;"></span>
-  </div>
-</div>
+	<div class="row">
+ 		<div class="small-2 large-4 columns">
+    		<div class="range-slider" data-slider="1" data-options="display_selector: #sliderOutput; start: 1; end: 18;">
+      			<span class="range-slider-handle" role="slider" tabindex="0" aria-valuemin="1" aria-valuemax="18" aria-valuenow="1"></span>
+      			<span class="range-slider-active-segment" style="width: 50%;"></span>
+    		</div>
+  		</div>
+  		<div class="small-2 large-4 columns">
+   			<span id="sliderOutput" style="display: block;margin-top: 17px;"></span>
+  		</div>
+	</div>
+
 		<br>
+
 <!-- Champion Table Stats -->
-		<table border="1">
+		<table border="1" width="25%">
 			<tr><td colspan="4"> <center>Health: <input type="text" id= "HP" name="health" readonly="true"></center></td></tr>
 			<tr><td colspan="4"><center>Mana:</center><input type="text" id= "MP" name="mana" readonly="true"></td></tr>
 			<tr><td>HP Regen per 5</td><td><input type="text" id="HP5" name="healthregen" readonly="true"></td><td>Mana Regen per 5</td><td><input type="text" id="MP5" name="manaregen" readonly="true"></td></tr>
@@ -85,9 +92,20 @@
 			<tr><td>Critical Damage</td><td><input type="text" id="CD" name="criticaldamage" readonly="true"></td><td>Magic Resist</td><td><input type="text" id="MR" name="magicresist" readonly="true"></td></tr>
 			<tr><td>Range</td><td><input type="text" id="RANGE" name="range" readonly="true"></td><td>Movement Speed</td><td><input type="text" id="MS" name="movement" readonly="true"></td></tr>
 		</table>
+
+
+
 		<textarea id="output" readonly="true" rows="5" cols="5"></textarea><br>
-		<input class="button radius" onClick="javascript: submit();" value="Calculate" id="calculate" onclick="javascript: changePicture();">
-	</div>
+
+
+		<!-- Calculate Button -->
+		<div>
+			<input class="button radius" onClick="javascript: submit();" value="Calculate" id="calculate" onclick="javascript: changePicture();"> 
+		</div>
+
+</div>  <!-- Close Body Div -->
+
+
 	<!-- Initialize Foundation -->
 	<script>
   		$(document).foundation();
