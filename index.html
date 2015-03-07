@@ -45,6 +45,7 @@
 			</ul>
 		</section>
 	</nav>
+<<<<<<< HEAD
 	<!--Page Div-->
 	<div>
 		<!--Mid Section-->
@@ -225,6 +226,51 @@
 				</tr>
 			</table>
 		</div>
+=======
+
+	<div id="userChampionContainer">
+	<!-- Character Select -->
+		<a class="th" role="button" href="#"><img src="images/champion/Ezreal.png"></a>
+		<br>
+
+		<input type="text" id="champ" value="Ahri" name="championname" placeholder="Champion">
+		<br>
+	</div>
+
+	<div id="championList" style="display: none">
+		<h1>Hello World</h1>
+	</div>
+
+
+		Level:
+<div class="row">
+  <div class="small-10 medium-11 columns">
+    <div class="range-slider" data-slider="1" data-options="display_selector: #sliderOutput; start: 1; end: 18;">
+      <span class="range-slider-handle" role="slider" tabindex="0" aria-valuemin="1" aria-valuemax="18" aria-valuenow="1"></span>
+      <span class="range-slider-active-segment" style="width: 50%;"></span>
+    </div>
+  </div>
+  <div class="small-2 medium-1 columns">
+    <span id="sliderOutput" style="display: block;margin-top: 17px;"></span>
+  </div>
+</div>
+		<br>
+<!-- Champion Table Stats -->
+		<table border="1">
+			<tr><td colspan="4"> <center>Health: <input type="text" id= "HP" name="health" readonly="true"></center></td></tr>
+			<tr><td colspan="4"><center>Mana:</center><input type="text" id= "MP" name="mana" readonly="true"></td></tr>
+			<tr><td>HP Regen per 5</td><td><input type="text" id="HP5" name="healthregen" readonly="true"></td><td>Mana Regen per 5</td><td><input type="text" id="MP5" name="manaregen" readonly="true"></td></tr>
+			<tr><td>Attack Damage</td><td><input type="text" id="AD" name="attackdamage" readonly="true"></td><td>Ability Power</td><td><input type="text" id="AP" name="abilitypower" readonly="true"></td></tr>
+			<tr><td>Armor Penetration</td><td><input type="text" id= "APEN" name="armorpen" readonly="true"></td><td>Magic Penetration</td><td><input type="text" id= "MPEN" name="magicpen" readonly="true"></td></tr>
+			<tr><td>Lifesteal</td><td><input type="text" id="LS" name="lifesteal" readonly="true"></td><td>Spell Vamp</td><td><input type="text" id="SV" name="spellvamp" readonly="true"></td></tr>
+			<tr><td>Attack Speed</td><td><input type="text" id="AS" name="attackspeed" readonly="true"></td><td>Cooldown Reduction</td><td><input type="text" id="CDR" name="cooldown" readonly="true"></td></tr>
+			<tr><td>Critical Chance</td><td><input type="text" id= "CC" name="criticalchance" readonly="true"></td><td>Armor</td><td><input type="text" id="AR" name="armor" readonly="true"></td></tr>
+			<tr><td>Critical Damage</td><td><input type="text" id="CD" name="criticaldamage" readonly="true"></td><td>Magic Resist</td><td><input type="text" id="MR" name="magicresist" readonly="true"></td></tr>
+			<tr><td>Range</td><td><input type="text" id="RANGE" name="range" readonly="true"></td><td>Movement Speed</td><td><input type="text" id="MS" name="movement" readonly="true"></td></tr>
+		</table>
+		<textarea id="output" readonly="true" rows="5" cols="5"></textarea><br>
+		<input class="button radius" onClick="javascript: submit();" value="Calculate" id="calculate" onclick="javascript: changePicture();">
+>>>>>>> gh-pages
 	</div>
 	<!-- Initialize Foundation -->
 	<script>
