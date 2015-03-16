@@ -7,7 +7,7 @@ $(document).ready(function() {
 		$(".overlay").show();
 
 		$.getJSON("championFull.json", function(data) {
-			var output = data.Aatrox.name;
+			var output = Aatrox.name;
 			// var output = '<ul>'
 			// $.each(data, function(key, val) {
 			// 	output += '<li>';
