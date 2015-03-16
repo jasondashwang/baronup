@@ -7,6 +7,7 @@ $(document).ready(function() {
 		$(".overlay").show();
 
 		$.getJSON("championFull.json", function(data) {
+			console.log(data);
 			// var output = '<ul class="ChampionsDisplay">'
 			// $.each(data, function(key, val) {
 			// 	output += '<li>';
@@ -14,7 +15,7 @@ $(document).ready(function() {
 			// 	output += '</li>';
 			// })
 			// output += '</ul>';
-			console.log(data);
+
 		})	
 	});
 	$('h5').click(function() {
