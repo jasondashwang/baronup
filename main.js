@@ -10,7 +10,7 @@ $(document).ready(function() {
 			var output = '<ul>'
 			$.each(data, function(key, val) {
 				output += '<li>';
-				output += '<h1>' + val.name + '</h1>';
+				output += '<h1>' + val.name.id + '</h1>';
 				output += '</li>';
 			})
 			output += '</ul>';
@@ -21,6 +21,5 @@ $(document).ready(function() {
 		$(".modal").hide();	
 		$(".overlay").hide();
 	});
-//'<img href="' + 'images/champion/' + val.image.full + '">'
 
 });
