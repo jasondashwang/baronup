@@ -6,7 +6,7 @@ $(document).ready(function() {
 		$(".modal").show();	
 		$(".overlay").show();
 
-		$.getJSON("champion.json", function(data) {
+		$.getJSON("championFull.json", function(data) {
 			// var output = '<ul class="ChampionsDisplay">'
 			// $.each(data, function(key, val) {
 			// 	output += '<li>';
