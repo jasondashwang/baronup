@@ -7,13 +7,14 @@ $(document).ready(function() {
 		$(".overlay").show();
 
 		$.getJSON("championFull.json", function(data) {
-			var output = '<ul>'
-			$.each(data, function(key, val) {
-				output += '<li>';
-				output += '<h1>' + data.val.name + '</h1>';
-				output += '</li>';
-			})
-			output += '</ul>';
+			var output = data.Aatrox.name;
+			// var output = '<ul>'
+			// $.each(data, function(key, val) {
+			// 	output += '<li>';
+			// 	output += '<h1>' + data.val.name + '</h1>';
+			// 	output += '</li>';
+			// })
+			// output += '</ul>';
 			$('.modal').html(output);
 		})	
 	});
