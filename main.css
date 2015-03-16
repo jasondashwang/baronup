@@ -93,6 +93,7 @@ table {
     text-align: center;
     z-index: 11;
     padding: 10px;
+    overflow: scroll;
 }
 h5 {
 	display: block;

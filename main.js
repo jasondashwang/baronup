@@ -1,25 +1,25 @@
 $(document).ready(function() {
 	$(".modal").hide();	
-	$(".overlay").hide();	
+	$(".overlay").hide();
 	$(".ChampSelect").click(function() {
 		$(".modal").show();	
 		$(".overlay").show();
 
 		$.getJSON("championFull.json", function(data) {
 			console.log(data);
-			// var output = '<ul>'
-			// $.each(data, function(key, val) {
-			// 	output += '<li>';
-			// 	output += '<h1>' + data.val.name + '</h1>';
-			// 	output += '</li>';
-			// })
-			// output += '</ul>';
-			// $('.modal').html(output);
+			var output = '<ul style=list-style:none;>'
+			$.each(data.data, function(key, val) {
+				console.log(val.image.full);
+				output += '<li style=display:inline;float:left;class:champions >';
+				output += '<img src='+'Images/champion/'+ val.image.full+' height=60% width=60%/>';
+				output += '</li>';
+			})
+			output += '</ul>';
+			$('.modal').html(output);
 		})	
 	});
 	$('h5').click(function() {
 		$(".modal").hide();	
 		$(".overlay").hide();
 	});
-
 });
