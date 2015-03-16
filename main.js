@@ -7,13 +7,13 @@ $(document).ready(function() {
 		$(".overlay").show();
 
 		$.getJSON("championFull.json", function(data) {
-			// var output = '<ul class="ChampionsDisplay">'
-			// $.each(data, function(key, val) {
-			// 	output += '<li>';
-			// 	output += '<img href="' + 'images/champion/' + val.image.full + '">';
-			// 	output += '</li>';
-			// })
-			// output += '</ul>';
+			var output = '<ul class="ChampionsDisplay">'
+			$.each(data, function(key, val) {
+				output += '<li>';
+				output += '<img href="' + 'images/champion/' + val.image.full + '">';
+				output += '</li>';
+			})
+			output += '</ul>';
 			window.alert(data);
 		})	
 	});
