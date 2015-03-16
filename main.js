@@ -10,7 +10,7 @@ $(document).ready(function() {
 			var output = '<ul class="ChampionsDisplay">'
 			$.each(data, function(key, val) {
 				output += '<li>';
-				output += '<h1>' + val.id '</h1>';
+				output += '<h1>' + toString(val.id) + '</h1>';
 				output += '</li>';
 			})
 			output += '</ul>';
