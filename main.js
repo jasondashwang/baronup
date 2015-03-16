@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	var userChampion;
 	$(".modal").hide();	
 	$(".overlay").hide();
 	$(".ChampSelect").click(function() {
@@ -10,13 +11,16 @@ $(document).ready(function() {
 			var output = '<ul style=list-style:none;>'
 			$.each(data.data, function(key, val) {
 				console.log(val.image.full);
-				output += '<li style=display:inline;float:left;class:champions >';
-				output += '<img src='+'Images/champion/'+ val.image.full+' height=60% width=60%/>';
+				output += '<li style=display:inline;float:left;class:champions;height:10%;width:10%>';
+				output += '<img src='+'Images/champion/'+ val.image.full+' />';
 				output += '</li>';
 			})
 			output += '</ul>';
 			$('.modal').html(output);
-		})	
+		})
+		$('.champions').click(function() {
+
+		});	
 	});
 	$('h5').click(function() {
 		$(".modal").hide();	
