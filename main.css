@@ -1,5 +1,19 @@
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+body {
+    position: relative; 
+    padding: 30px;
+    background: #fff;
+}
 #Opponent {
 	float: right;
+	width: 25%;
+}
+#UserChampion {
+	float: left;
+	width: 25%;
 }
 .Champions {
 	display: inline-block;
@@ -37,4 +51,54 @@ title{
 #displayLevel{
 	width: 30px; 
 	height: 15px;
+}
+#MidSection {
+	float: center;
+	width: 50%;
+}
+table {
+	width: 100%;
+	margin: 0 auto;
+}
+#ItemsTable {
+	height: 224px;
+}
+#UserTable {
+	margin-top: 0;
+	height: 224px;
+}
+#MasterRune {
+	height: 100px;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 10;
+}
+.modal {
+    width: 850px;
+    height: 550px;
+    line-height: 200px;
+    position: fixed;
+    top: 25%; 
+    left: 28%;
+    margin-top: -100px;
+    margin-left: -150px;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 11;
+    padding: 10px;
+}
+h5 {
+	display: block;
+	float: left;
+	left: 50px;
+}
+.ChampSelect:hover, .ChampSelect:focus {
+	box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.5);
 }

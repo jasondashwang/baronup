@@ -1,237 +1,317 @@
 <!DOCTYPE html>
 <html class "no-js" lang="en">
 <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-<head>
-	<meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
 
-	<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="calc.js"></script>
-	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-	<link rel="shortcut icon" href="favicon.ico" >
-	<link rel="stylesheet" href="foundation/css/normalize.css">
-  	<link rel="stylesheet" href="foundation/css/foundation.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="calc.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" href="favicon.ico" >
+		<link rel="stylesheet" href="foundation/css/normalize.css">
+	  	<link rel="stylesheet" href="foundation/css/foundation.css">
 
-	<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
 
-	<script src="foundation/js/vendor/jquery.js"></script>
-	<script src="foundation/js/foundation.min.js"></script>
+		<script src="foundation/js/vendor/jquery.js"></script>
+		<script src="foundation/js/foundation.min.js"></script>
 
-	<title> Baron Up: LoL Toolkit </title>
-	<script type="Calculator.java"></script>
-	<script src="foundation/js/vendor/modernizr.js"></script>
-</head>
-<body>
-	<!--Nav Bar-->
-	<nav class="top-bar" data-topbar role="navigation">
-		<ul class="title-area">
-			<li class="name"> <h1> <a href='index.html'> BaronUp </a> </li>
-		</ul>
-		<section class="top-bar-section">
-			<ul class='right'>
-				<li id="about">
-					<a href="about.html"> About </a>
-				</li>
-
-				<li id='donate'>
-					<a href='#'> Donate </a>
-				</li>
-			</ul>
-			<ul class="left">
-				<li class="active" id="help">
-					<a href="#"> Help </a>
-				</li>
-			</ul>
-		</section>
-	</nav>
-	<!--Page Div-->
-	<div>
-		<!--Mid Section-->
-		<div>
-			<table></table>
-		</div>
-		<!--User Champion Area-->
-		<div id="UserChampion" class="Champions">
-			<table border="1px">
-				<tr>
-					<td colspan="3" id="ChampImage">
-						<img src="images/champion/ahri.png">
-					</td>
-					<td>
-						<div class="range-slider vertical-range" data-slider data-options="vertical:true;start:1;end: 18;display_selector:#sliderOutput;">
-  							<span class="range-slider-handle" role="slider" tabindex="0"></span>
-  							<span class="range-slider-active-segment"></span>
- 						 	<input type="hidden">
-						</div>
-						<div> 
-							<span id="sliderOutput"></span>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<th colspan="4" id="ChampName"></th>
-				</tr>
-				<tr>
-					<td>Health</td>
-					<td colspan="3" id="ChampHealth">
-						<div class="radius progress success large-8">
-  							<span class="meter" style="width: 100%"></span>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>Mana</td>
-					<td colspan="3" id="ChampMana">
-						<div class="progress large-6">
-  							<span class="meter" style="width: 40%"></span>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>HP Regen per 5</td>
-					<td id="ChampHPRegen"></td>
-					<td>Mana Regen per 5</td>
-					<td id="ChampManaRegen"></td>
-				</tr>
-				<tr>
-					<td>Attack Damage</td>
-					<td id="ChampAttackDamage"></td>
-					<td>Ability Power</td>
-					<td id="ChampAbilityPower"></td>
-				</tr>
-				<tr>
-					<td>Armor Penetration</td>
-					<td id="ChampArmorPenetration"></td>
-					<td>Magic Penetration</td>
-					<td id="ChampMagicPenetration"></td>
-				</tr>
-				<tr>
-					<td>Life Steal</td>
-					<td id="ChampLifeSteal"></td>
-					<td>Spell Vamp</td>
-					<td id="ChampSpellVamp"></td>
-				</tr>
-				<tr>
-					<td>Attack Speed</td>
-					<td id="ChampAttackSpeed"></td>
-					<td>Cooldown Reduction</td>
-					<td id="ChampCooldownReduction"></td>
-				</tr>
-				<tr>
-					<td>Critical Chance</td>
-					<td id="ChampCriticalChance"></td>
-					<td>Armor</td>
-					<td id="ChampArmor"></td>
-				</tr>
-				<tr>
-					<td>Critical Damage</td>
-					<td id="ChampCriticalDamage"></td>
-					<td>Magic Resist</td>
-					<td id="ChampMagicResist"></td>
-				</tr>
-				<tr>
-					<td>Range</td>
-					<td id="ChampRange"></td>
-					<td>Movement Speed</td>
-					<td id="ChampMovementSpeed"></td>
-				</tr>
-			</table>
-		</div>
-		<!--Opponent Champion Area-->
-		<div id="Opponent" class="Champions">
-			<table border="1px">
-				<tr>
-					<td colspan="3" id="ChampImage">
-						<img src="images/champion/ahri.png">
-					</td>
-					<td>
-						<div class="range-slider vertical-range" data-slider data-options="vertical:true;start:1;end: 18;display_selector:#sliderOutput2;">
-  							<span class="range-slider-handle" role="slider" tabindex="0"></span>
-  							<span class="range-slider-active-segment"></span>
- 						 	<input type="hidden">
-						</div>
-						<div> 
-							<span id="sliderOutput2"></span>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<th colspan="4" id="ChampName"></th>
-				</tr>
-				<tr>
-					<td>Health</td>
-					<td colspan="3" id="ChampHealth">
-						<div class="radius progress success large-8">
-  							<span class="meter" style="width: 100%"></span>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>Mana</td>
-					<td colspan="3" id="ChampMana">
-						<div class="progress large-6">
-  							<span class="meter" style="width: 40%"></span>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>HP Regen per 5</td>
-					<td id="OppHPRegen"></td>
-					<td>Mana Regen per 5</td>
-					<td id="OppManaRegen"></td>
-				</tr>
-				<tr>
-					<td>Attack Damage</td>
-					<td id="OppAttackDamage"></td>
-					<td>Ability Power</td>
-					<td id="OppAbilityPower"></td>
-				</tr>
-				<tr>
-					<td>Armor Penetration</td>
-					<td id="OppArmorPenetration"></td>
-					<td>Magic Penetration</td>
-					<td id="OppMagicPenetration"></td>
-				</tr>
-				<tr>
-					<td>Life Steal</td>
-					<td id="OppLifeSteal"></td>
-					<td>Spell Vamp</td>
-					<td id="OppSpellVamp"></td>
-				</tr>
-				<tr>
-					<td>Attack Speed</td>
-					<td id="OppAttackSpeed"></td>
-					<td>Cooldown Reduction</td>
-					<td id="OppCooldownReduction"></td>
-				</tr>
-				<tr>
-					<td>Critical Chance</td>
-					<td id="OppCriticalChance"></td>
-					<td>Armor</td>
-					<td id="OppArmor"></td>
-				</tr>
-				<tr>
-					<td>Critical Damage</td>
-					<td id="OppCriticalDamage"></td>
-					<td>Magic Resist</td>
-					<td id="OppMagicResist"></td>
-				</tr>
-				<tr>
-					<td>Range</td>
-					<td id="OppRange"></td>
-					<td>Movement Speed</td>
-					<td id="OppMovementSpeed"></td>
-				</tr>
-			</table>
-		</div>
+		<title> Baron Up: LoL Toolkit </title>
+		<script type="Calculator.java"></script>
+		<script src="foundation/js/vendor/modernizr.js"></script>
+	</head>
+	<body>
+	<div class="overlay">
+		
 	</div>
-	<!-- Initialize Foundation -->
-	<script>
-  		$(document).foundation();
-	</script>
-		<script src="jquery.min.js"></script>
-	<script src="main.js"></script>
-<body>
+	<div class="modal">
+		<h5>x</h5>
+	</div>
+	<div class="content">
+				<!--Nav Bar-->
+		<div id="content">
+			<nav class="top-bar" data-topbar role="navigation">
+				<ul class="title-area">
+					<li class="name"> <h1> <a href='index.html'> BaronUp </a></h1></li>
+				</ul>
+				<section class="top-bar-section">
+					<ul class='right'>
+						<li id="about">
+							<a href="about.html"> About </a>
+						</li>
 
+						<li id='donate'>
+							<a href='#'> Donate </a>
+						</li>
+					</ul>
+					<ul class="left">
+						<li class="active" id="help">
+							<a href="#"> Help </a>
+						</li>
+					</ul>
+				</section>
+			</nav>
+			<!--Page Div-->
+			<div>
+				<!--Mid Section-->
+				<div id="MidSection" class="Champions">
+					<div>
+						<table border="1px" id="ItemsTable">
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<div id="MidUserDiv">
+						<table border="1px" id="UserTable">
+							<tr>
+								<td></td>
+								<td rowspan="2"></td>
+								<td rowspan="2"></td>
+								<td rowspan="2"></td>
+								<td rowspan="2"></td>
+								<td rowspan="2"></td>
+								<td rowspan="2"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td rowspan="2"></td>
+								<td rowspan="2"></td>
+								<td rowspan="2"></td>
+								<td rowspan="2"></td>
+								<td rowspan="2"></td>
+								<td rowspan="2"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<div>
+						<table border="1px" id="MasterRune">
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<!--User Champion Area-->
+				<div id="UserChampion" class="Champions">
+					<table border="1px">
+						<tr>
+							<td colspan="3" id="ChampImage" class="ChampSelect">
+								<img src="images/champion/ahri.png">
+							</td>
+							<td rowspan="2">
+								<div class="range-slider vertical-range" data-slider data-options="vertical:true;start:1;end: 18;display_selector:#sliderOutput;">
+		  							<span class="range-slider-handle" role="slider" tabindex="0"></span>
+		  							<span class="range-slider-active-segment"></span>
+		 						 	<input type="hidden">
+								</div>
+								<div> 
+									<span id="sliderOutput"></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="3" id="ChampName">Ahri</th>
+						</tr>
+						<tr>
+							<td>Health</td>
+							<td colspan="3" id="ChampHealth">
+								<div class="radius progress success large-8">
+		  							<span class="meter" style="width: 100%"></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Mana</td>
+							<td colspan="3" id="ChampMana">
+								<div class="progress large-6">
+		  							<span class="meter" style="width: 40%"></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>HP5</td>
+							<td id="ChampHPRegen"></td>
+							<td>MP5</td>
+							<td id="ChampManaRegen"></td>
+						</tr>
+						<tr>
+							<td>Attack Damage</td>
+							<td id="ChampAttackDamage"></td>
+							<td>Ability Power</td>
+							<td id="ChampAbilityPower"></td>
+						</tr>
+						<tr>
+							<td>Armor Pen</td>
+							<td id="ChampArmorPenetration"></td>
+							<td>Magic Pen</td>
+							<td id="ChampMagicPenetration"></td>
+						</tr>
+						<tr>
+							<td>Life Steal</td>
+							<td id="ChampLifeSteal"></td>
+							<td>Spell Vamp</td>
+							<td id="ChampSpellVamp"></td>
+						</tr>
+						<tr>
+							<td>Attack Speed</td>
+							<td id="ChampAttackSpeed"></td>
+							<td>CDR</td>
+							<td id="ChampCooldownReduction"></td>
+						</tr>
+						<tr>
+							<td>Crit Chance</td>
+							<td id="ChampCriticalChance"></td>
+							<td>Armor</td>
+							<td id="ChampArmor"></td>
+						</tr>
+						<tr>
+							<td>Crit Damage</td>
+							<td id="ChampCriticalDamage"></td>
+							<td>Magic Resist</td>
+							<td id="ChampMagicResist"></td>
+						</tr>
+						<tr>
+							<td>Range</td>
+							<td id="ChampRange"></td>
+							<td>Movement</td>
+							<td id="ChampMovementSpeed"></td>
+						</tr>
+					</table>
+				</div>
+				<!--Opponent Champion Area-->
+				<div id="Opponent" class="Champions">
+					<table border="1px">
+						<tr>
+							<td colspan="3" id="ChampImage" class="ChampSelect">
+								<img src="images/champion/ahri.png">
+							</td>
+							<td rowspan="2">
+								<div class="range-slider vertical-range" data-slider data-options="vertical:true;start:1;end: 18;display_selector:#sliderOutput2;">
+		  							<span class="range-slider-handle" role="slider" tabindex="0"></span>
+		  							<span class="range-slider-active-segment"></span>
+		 						 	<input type="hidden">
+								</div>
+								<div> 
+									<span id="sliderOutput2"></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="3" id="ChampName"></th>
+						</tr>
+						<tr>
+							<td>Health</td>
+							<td colspan="3" id="ChampHealth">
+								<div class="radius progress success large-8">
+		  							<span class="meter" style="width: 100%"></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Mana</td>
+							<td colspan="3" id="ChampMana">
+								<div class="progress large-6">
+		  							<span class="meter" style="width: 40%"></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>HP5</td>
+							<td id="OppHPRegen"></td>
+							<td>MP5</td>
+							<td id="OppManaRegen"></td>
+						</tr>
+						<tr>
+							<td>Attack Damage</td>
+							<td id="OppAttackDamage"></td>
+							<td>Ability Power</td>
+							<td id="OppAbilityPower"></td>
+						</tr>
+						<tr>
+							<td>Armor Pen</td>
+							<td id="OppArmorPenetration"></td>
+							<td>Magic Pen</td>
+							<td id="OppMagicPenetration"></td>
+						</tr>
+						<tr>
+							<td>Life Steal</td>
+							<td id="OppLifeSteal"></td>
+							<td>Spell Vamp</td>
+							<td id="OppSpellVamp"></td>
+						</tr>
+						<tr>
+							<td>Attack Speed</td>
+							<td id="OppAttackSpeed"></td>
+							<td>CDR</td>
+							<td id="OppCooldownReduction"></td>
+						</tr>
+						<tr>
+							<td>Crit Chance</td>
+							<td id="OppCriticalChance"></td>
+							<td>Armor</td>
+							<td id="OppArmor"></td>
+						</tr>
+						<tr>
+							<td>Crit Damage</td>
+							<td id="OppCriticalDamage"></td>
+							<td>Magic Resist</td>
+							<td id="OppMagicResist"></td>
+						</tr>
+						<tr>
+							<td>Range</td>
+							<td id="OppRange"></td>
+							<td>Movement</td>
+							<td id="OppMovementSpeed"></td>
+						</tr>
+					</table>
+				</div>
+			</div> 
+		</div>      
+	</div>
+		<!-- Initialize Foundation -->
+		<script>
+	  		$(document).foundation();
+		</script>
+			<script src="jquery.min.js"></script>
+		<script src="main.js"></script>
+	<body>
 </html>
