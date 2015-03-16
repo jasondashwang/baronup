@@ -10,11 +10,10 @@ $(document).ready(function() {
 			var output = '<ul class="ChampionsDisplay">'
 			$.each(data, function(key, val) {
 				output += '<li>';
-				output += val.id;
+				output += '<h1>' + val.id '</h1>';
 				output += '</li>';
 			})
 			output += '</ul>';
-			window.alert(data);
 		})	
 	});
 	$('h5').click(function() {
