@@ -1,7 +1,6 @@
 $(document).ready(function() {
 	$(".modal").hide();	
 	$(".overlay").hide();	
-
 	$(".ChampSelect").click(function() {
 		$(".modal").show();	
 		$(".overlay").show();
