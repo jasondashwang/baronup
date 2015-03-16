@@ -7,13 +7,14 @@ $(document).ready(function() {
 		$(".overlay").show();
 
 		$.getJSON("championFull.json", function(data) {
-			var output = '<ul class="ChampionsDisplay">'
-			$.each(data, function(key, val) {
-				output += '<li>';
-				output += '<h1>' + toString(val.id) + '</h1>';
-				output += '</li>';
-			})
-			output += '</ul>';
+			// var output = '<ul class="ChampionsDisplay">'
+			// $.each(data, function(key, val) {
+			// 	output += '<li>';
+			// 	output += '<h1>' + val.name + '</h1>';
+			// 	output += '</li>';
+			// })
+			// output += '</ul>';
+			console.log(data);
 		})	
 	});
 	$('h5').click(function() {
