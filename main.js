@@ -13,6 +13,8 @@ $(document).ready(function() {
 				output += '<img href="' + 'images/champion/' + val.image.full + '">';
 				output += '</li>';
 			})
+			output += '</ul>';
+			$('.modal').html(output);
 		})	
 	});
 	$('h5').click(function() {
