@@ -1,18 +1,21 @@
 $(document).ready(function() {
 	var userChampion;
 	var user;
-	$(".pop").hide();	
+	$(".pop").hide();
+	$('#boxclose').click(function() {
+				$('.pop').toggle();
+	});	
 	$(".ChampSelect").click(function() {
 		$(".pop").show();	
 		$.getJSON("championFull.json", function(data) {
-			var output = '<ul style=list-style:none;>';
+			var output = '<input type=button id=boxclose style=position:fixed;z-index:20; value=Close>';
+			output += '<ul style=list-style:none;>';
 			$.each(data.data, function(key, val) {
 				output += '<li style=display:inline;float:left;height:10%;width:10%;>';
 				output += '<img src='+'Images/champion/'+val.image.full+' id=' + val.id + ' />';
 				output += '</li>';
 			});
 			output += '</ul>';
-			output += '<a id=boxclose style=position:fixed;z-index:20;>Close</a>';
 			$('.modal').html(output);
 			$('ul').click(function(event) {
 				var name = event.target.id;
@@ -47,14 +50,15 @@ $(document).ready(function() {
 	$(".OppSelect").click(function() {
 		$(".pop").show();	
 		$.getJSON("championFull.json", function(data) {
-			var output = '<ul style=list-style:none;>';
+			var output = '<input type=button id=boxclose style=position:fixed;z-index:20; value="Close">';
+			output += '<ul style=list-style:none;>';
 			$.each(data.data, function(key, val) {
 				output += '<li style=display:inline;float:left;height:10%;width:10%;>';
 				output += '<img src='+'Images/champion/'+val.image.full+' id=' + val.id + ' />';
 				output += '</li>';
 			});
 			output += '</ul>';
-			output += '<a id=boxclose style=position:fixed;z-index:20;>Close</a>';
+
 			$('.modal').html(output);
 			$('ul').click(function(event) {
 				var name = event.target.id;
