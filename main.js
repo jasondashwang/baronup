@@ -94,14 +94,22 @@ $(document).ready(function() {
 	$('#boxclose').click(function() {
 		$('.pop').hide()
 	});
-	$('#sliderOutput').change(function() {
-		var champ = 'champion/' + $('ChampName').html() + '.json';
-		var level = parseInt($('#sliderOutput')) - 1;
-		$.getJSON(champ, function(data) {
-			$('#ChampHPRegen').html((level*parseInt(data.stats.hpregenperlevel)) + parseInt($('#ChampHPRegen').html()));
-			$('#ChampManaRegen').html((level*parseInt(data.stats.mpregenperlevel)) + parseInt($('#ChampManaRegen').html()));
-			$('#ChampArmor').html((level*parseInt(data.stats.armorperlevel)) + parseInt($('#ChampHPRegen').html()));
-			$('#ChampMagicResist').html((level*parseInt(data.stats.spellblockperlevel)) + parseInt($('#ChampHPRegen').html()));
-		});
-	});	
+	$('#userSlider').change(function(){
+		var level = parseInt($('#userSlider input').val());
+		var name = 'champion/' + $('#ChampName').html() + '.json';
+		$.getJSON(name, function(data) {
+			$('#ChampHealth').html(parseFloat(data.stats.hp) + ((level - 1)* parseFloat(data.stats.hpperlevel)));
+			$('#ChampMana').html(
+				parseFloat(data.stats.mp) + (parseFloat(data.stats.mpperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200))));
+			$('#ChampHPRegen').html(parseFloat(data.stats.hpregen) + ((level - 1) * parseFloat(data.stats.hpperlevel)));
+			$('#ChampManaRegen').html(parseFloat(data.stats.mpregen) + ((level - 1) * parseFloat(data.stats.mpperlevel)));
+			$('#ChampHPRegen').html(parseFloat(data.stats.hpregen) + ((level - 1) * parseFloat(data.stats.hpperlevel)));
+		})
+	});
+	$('#OppLevel').change(function(){
+		var level2 = $('#OppLevel').val();
+		$('#sliderdisplay2').html(level2);
+	});
+
+
 });

@@ -13,11 +13,12 @@
 		<link rel="shortcut icon" href="favicon.ico" >
 		<link rel="stylesheet" href="foundation/css/normalize.css">
 	  	<link rel="stylesheet" href="foundation/css/foundation.css">
+
 		<script src="/js/vendor/fastclick.js"></script>
 		<script src="foundation/js/vendor/jquery.js"></script>
 		<script src="foundation/js/foundation.min.js"></script>
-		<script src="foundation/js/vendor/modernizr.js"></script>
 		<title> BaronUp: LoL Toolkit </title>
+		
 	</head>
 	<body>
 	<input type="button" class="pop" id="boxclose" style="position:fixed;z-index:20;top:12%;left:48%;" value=Close>
@@ -144,10 +145,10 @@
 								<img id="ChampImage" src='Images/champion/Unknown.png'>
 							</td>
 							<td rowspan="2">
-								<div class="range-slider vertical-range" data-slider data-options="vertical:true;start:1;end: 18;display_selector:#sliderOutput;">
+								<div class="range-slider vertical-range" data-slider data-options="vertical:true;start:1;end: 18;step:1;display_selector:#sliderOutput;" id="userSlider">
 		  							<span class="range-slider-handle" role="slider" tabindex="0"></span>
 		  							<span class="range-slider-active-segment"></span>
-		 						 	<input type="hidden">
+		 						 	<input type="hidden" id="userSlider">
 								</div>
 								<div> 
 									<span id="sliderOutput"></span>
@@ -164,17 +165,17 @@
 					<table class="championvariables" border="1px">
 						<tr>
 							<td class="tablewords">Health</td>
-							<td colspan="3" class="bars">
+							<td colspan="3" class="bars" id="ChampHealth">
 								<div class="radius progress success large-12">
-		  							<span class="meter barnumber" style="width: 100%" id="ChampHealth"></span>
+		  							<span class="meter" style="width: 100%"></span>
 								</div>
 							</td>
 						</tr>
 						<tr>
 							<td class="tablewords">Mana</td>
-							<td colspan="3" class="bars">
+							<td colspan="3" class="bars" id="ChampMana">
 								<div class="radius progress large-12">
-		  							<span class="meter barnumber" style="width: 100%" id="ChampMana"></span>
+		  							<span class="meter" style="width: 100%"></span>
 								</div>
 							</td>
 						</tr>
@@ -210,17 +211,17 @@
 					<table class="championvariables" border="1">
 						<tr>
 							<td class="tablewords">Health</td>
-							<td colspan="3">
+							<td colspan="3" id="OppHealth">
 								<div class="radius progress success large-12">
-		  							<span class="meter barnumber" style="width: 100%" id="OppHealth"></span>
+		  							<span class="meter" style="width: 100%"></span>
 								</div>
 							</td>
 						</tr>
 						<tr>
 							<td class="tablewords">Mana</td>
-							<td colspan="3" >
+							<td colspan="3" id="OppMana">
 								<div class="progress large-12">
-		  							<span class="meter barnumber" style="width: 100%" id="OppMana"></span>
+		  							<span class="meter" style="width: 100%"></span>
 								</div>
 							</td>
 						</tr>
