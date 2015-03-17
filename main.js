@@ -2,14 +2,13 @@ $(document).ready(function() {
 	var userChampion;
 	var user;
 	$(".pop").hide();
-	$('#boxclose').click(function() {
-				$('.pop').toggle();
-	});	
 	$(".ChampSelect").click(function() {
-		$(".pop").show();	
+		$(".pop").show();
+		$('#boxclose').click(function() {
+			console.log('hi');	//$('.pop').hide();
+		});	
 		$.getJSON("championFull.json", function(data) {
-			var output = '<input type=button id=boxclose style=position:fixed;z-index:20; value=Close>';
-			output += '<ul style=list-style:none;>';
+			var output = '<ul style=list-style:none;>';
 			$.each(data.data, function(key, val) {
 				output += '<li style=display:inline;float:left;height:10%;width:10%;>';
 				output += '<img src='+'Images/champion/'+val.image.full+' id=' + val.id + ' />';
@@ -24,7 +23,6 @@ $(document).ready(function() {
 				$(".pop").hide();
 				$('#ChampName').html(name);
 				var path = 'Images/champion/' + $('#ChampName').html() + '.png';
-				console.log(path);
 				$('#ChampImage').attr('src', path);
 				$('#ChampHPRegen').html(data.stats.hpregen);
 				$('#ChampManaRegen').html(data.stats.mpregen);
@@ -48,17 +46,18 @@ $(document).ready(function() {
 	var oppChampion;
 	var opp;	
 	$(".OppSelect").click(function() {
-		$(".pop").show();	
+		$(".pop").show();
+		$('#boxclose').click(function() {
+			console.log('hi');	//$('.pop').hide();
+		});	
 		$.getJSON("championFull.json", function(data) {
-			var output = '<input type=button id=boxclose style=position:fixed;z-index:20; value="Close">';
-			output += '<ul style=list-style:none;>';
+			var output = '<ul style=list-style:none;>';
 			$.each(data.data, function(key, val) {
 				output += '<li style=display:inline;float:left;height:10%;width:10%;>';
 				output += '<img src='+'Images/champion/'+val.image.full+' id=' + val.id + ' />';
 				output += '</li>';
 			});
 			output += '</ul>';
-
 			$('.modal').html(output);
 			$('ul').click(function(event) {
 				var name = event.target.id;
@@ -67,7 +66,6 @@ $(document).ready(function() {
 				$(".pop").hide();
 				$('#OppName').html(name);
 				var path = 'Images/champion/' + $('#OppName').html() + '.png';
-				console.log(path);
 				$('#OppImage').attr('src', path);
 				$('#OppHPRegen').html(data.stats.hpregen);
 				$('#OppManaRegen').html(data.stats.mpregen);
@@ -89,4 +87,7 @@ $(document).ready(function() {
 			}); 
 		});
 	});
+	$('#boxclose').click(function() {
+		$('.pop').hide()
+	})	
 });
