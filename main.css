@@ -135,6 +135,13 @@ title{
 	width: 100%;
 }
 
+.numberstats{
+	width: 63px;
+}
+
+.wordstats{
+	width: 105px;
+}
 
 .user{
 	float: left;
