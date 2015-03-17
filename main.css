@@ -112,8 +112,8 @@ h5 {
 	position: fixed;
 	z-index: 13;
 	border-radius: 50px;
-	margin-left: 200px;
-	margin-top: 75px;
+	left: 15%;
+	top: 10%;
 	padding-left: 9px;
 	font-style: bolder;
 }
