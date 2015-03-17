@@ -7,17 +7,38 @@ body {
     padding: 30px;
     background: #fff;
 }
-#Opponent {
-	float: right;
-	width: 25%;
-}
-#UserChampion {
-	float: left;
-	width: 25%;
-}
+
+/* Major DIVS */
 .Champions {
 	display: inline-block;
 }
+
+.entire-page{
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.upper-right-page{
+	width: 240px;
+	float: right;
+	height: 400px;
+}
+
+.upper-left-page{
+	width: 240px;
+	float: left;
+	height: 400px;
+}
+
+#MidSection {
+	float: center;
+	width: 480px;
+}
+
+
+/* Navigation Bar */
+
 nav{
 	background-color: #ff0000;
 	}
@@ -52,24 +73,96 @@ title{
 	width: 30px; 
 	height: 15px;
 }
-#MidSection {
-	float: center;
-	width: 50%;
-}
-table {
+
+/* Champion Table Data */
+
+.championvariables{
 	width: 100%;
-	margin: 0 auto;
 }
-#ItemsTable {
-	height: 224px;
-}
-#UserTable {
+
+/* Middle table data */
+
+#items {
 	margin-top: 0;
-	height: 224px;
+	height: 180px;
+	margin-bottom: 10px; 
 }
-#MasterRune {
-	height: 100px;
+
+#ItemsTable{
+	height: 100%;
+	width: 100%;
 }
+
+/* Inventory */
+
+#inventories{
+	height: 198px;
+}
+
+#userinventory{
+	width: 240px;
+	float: left;
+}
+
+#opponentinventory{
+	width: 240px;
+	float: right;
+}
+
+.inventory{
+	height: 198px;
+	width: 198px;
+}
+
+#inventories td{
+	width: 66px;
+	height: 66px;
+}
+
+/* Stats Tables */
+
+#userstats{
+	width: 336px;
+	float: left;
+}
+
+#opponentstats{
+	width: 336px;
+	float: right;
+}
+
+.stats{
+	width: 100%;
+}
+
+.numberstats{
+	width: 63px;
+}
+
+.wordstats{
+	width: 105px;
+}
+
+.user{
+	float: left;
+}
+
+.opponent{
+	float: right;
+}
+
+
+
+
+.tablewords{
+	width: 60px;
+}
+
+.bars{
+	width: 180px;
+}
+
+
 .overlay {
     position: fixed;
     top: 0;
@@ -103,17 +196,4 @@ h5 {
 .ChampSelect:hover, .ChampSelect:focus {
 	box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.5);
 }
-#boxclose {
-	content: x;
-	background-color: white;
-	border: 1px solid;
-	height: 30px;
-	width: 30px;
-	position: fixed;
-	z-index: 13;
-	border-radius: 50px;
-	left: 15%;
-	top: 10%;
-	padding-left: 9px;
-	font-style: bolder;
-}
+

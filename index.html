@@ -23,10 +23,9 @@
 		<script src="foundation/js/vendor/modernizr.js"></script>
 	</head>
 	<body>
-	<div class="overlay pop" style="color: purple">
+	<div class="overlay pop">
 		
 	</div>
-	<a class="boxclose pop" id="boxclose">x</a>
 	<div class="modal pop">
 		
 	</div>
@@ -55,10 +54,13 @@
 				</section>
 			</nav>
 			<!--Page Div-->
-			<div>
+			<div class="entire-page">
+
 				<!--Mid Section-->
+
+<!-- Item Table -->
 				<div id="MidSection" class="Champions">
-					<div>
+					<div id="items">
 						<table border="1px" id="ItemsTable">
 							<tr>
 								<td></td>
@@ -67,16 +69,22 @@
 								<td></td>
 								<td></td>
 								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
 								<td></td>
 								<td></td>
 							</tr>
 							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -86,54 +94,53 @@
 							</tr>
 						</table>
 					</div>
-					<div id="MidUserDiv">
-						<table border="1px" id="UserTable">
-							<tr>
-								<td></td>
-								<td rowspan="2"></td>
-								<td rowspan="2"></td>
-								<td rowspan="2"></td>
-								<td rowspan="2"></td>
-								<td rowspan="2"></td>
-								<td rowspan="2"></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td rowspan="2"></td>
-								<td rowspan="2"></td>
-								<td rowspan="2"></td>
-								<td rowspan="2"></td>
-								<td rowspan="2"></td>
-								<td rowspan="2"></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-							</tr>
-						</table>
+<!-- Inventories -->
+					<div id="inventories">
+						<div id="userinventory">
+							<table class="inventory user" border="1">
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Dragon</td>
+									<td></td>
+									<td>Baron</td>
+								</tr>
+							</table>
+						</div>
+						<div id="opponentinventory">
+							<table class="inventory opponent" border="1">
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Dragon</td>
+									<td></td>
+									<td>Baron</td>
+								</tr>
+							</table>							
+						</div>
 					</div>
-					<div>
-						<table border="1px" id="MasterRune">
-							<tr>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-							</tr>
-						</table>
-					</div>
+
 				</div>
-				<!--User Champion Area-->
-				<div id="UserChampion" class="Champions">
-					<table border="1px">
+
+<!--User Champion Area-->
+			<div class="upper-left-page Champions">
+					<table class="championvariables" border="1px">
 						<tr>
 							<td colspan="3" id="ChampImage" class="ChampSelect">
 								<img src="Images/champion/Ahri.png">
@@ -152,75 +159,34 @@
 						<tr>
 							<th colspan="3" id="ChampName">Ahri</th>
 						</tr>
+					</table>
+
+<!-- User Health and Mana -->
+
+					<table class="championvariables" border="1px">
 						<tr>
-							<td>Health</td>
-							<td colspan="3" id="ChampHealth">
+							<td class="tablewords">Health</td>
+							<td colspan="3" class="bars" id="ChampHealth">
 								<div class="radius progress success large-8">
 		  							<span class="meter" style="width: 100%"></span>
 								</div>
 							</td>
 						</tr>
 						<tr>
-							<td>Mana</td>
-							<td colspan="3" id="ChampMana">
+							<td class="tablewords">Mana</td>
+							<td colspan="3" class="bars" id="ChampMana">
 								<div class="progress large-6">
 		  							<span class="meter" style="width: 40%"></span>
 								</div>
 							</td>
 						</tr>
-						<tr>
-							<td>HP5</td>
-							<td id="ChampHPRegen"></td>
-							<td>MP5</td>
-							<td id="ChampManaRegen"></td>
-						</tr>
-						<tr>
-							<td>Attack Damage</td>
-							<td id="ChampAttackDamage"></td>
-							<td>Ability Power</td>
-							<td id="ChampAbilityPower"></td>
-						</tr>
-						<tr>
-							<td>Armor Pen</td>
-							<td id="ChampArmorPenetration"></td>
-							<td>Magic Pen</td>
-							<td id="ChampMagicPenetration"></td>
-						</tr>
-						<tr>
-							<td>Life Steal</td>
-							<td id="ChampLifeSteal"></td>
-							<td>Spell Vamp</td>
-							<td id="ChampSpellVamp"></td>
-						</tr>
-						<tr>
-							<td>Attack Speed</td>
-							<td id="ChampAttackSpeed"></td>
-							<td>CDR</td>
-							<td id="ChampCooldownReduction"></td>
-						</tr>
-						<tr>
-							<td>Crit Chance</td>
-							<td id="ChampCriticalChance"></td>
-							<td>Armor</td>
-							<td id="ChampArmor"></td>
-						</tr>
-						<tr>
-							<td>Crit Damage</td>
-							<td id="ChampCriticalDamage"></td>
-							<td>Magic Resist</td>
-							<td id="ChampMagicResist"></td>
-						</tr>
-						<tr>
-							<td>Range</td>
-							<td id="ChampRange"></td>
-							<td>Movement</td>
-							<td id="ChampMovementSpeed"></td>
-						</tr>
-					</table>
-				</div>
-				<!--Opponent Champion Area-->
-				<div id="Opponent" class="Champions">
-					<table border="1px">
+					</table> 
+			</div>
+
+<!--Opponent Champion Area-->
+
+			<div class="upper-right-page Champions">
+					<table class="championvariables" border="1px">
 						<tr>
 							<td colspan="3" id="ChampImage" class="ChampSelect">
 								<img src="Images/champion/Ahri.png">
@@ -239,8 +205,13 @@
 						<tr>
 							<th colspan="3" id="ChampName"></th>
 						</tr>
+					</table>
+
+<!-- Opponent Health and Mana -->
+
+					<table class="championvariables" border="1">
 						<tr>
-							<td>Health</td>
+							<td class="tablewords">Health</td>
 							<td colspan="3" id="ChampHealth">
 								<div class="radius progress success large-8">
 		  							<span class="meter" style="width: 100%"></span>
@@ -248,64 +219,125 @@
 							</td>
 						</tr>
 						<tr>
-							<td>Mana</td>
+							<td class="tablewords">Mana</td>
 							<td colspan="3" id="ChampMana">
 								<div class="progress large-6">
 		  							<span class="meter" style="width: 40%"></span>
 								</div>
 							</td>
 						</tr>
+					</table>
+			</div>
+<!-- User Stat Table -->
+				<div id="userstats">
+					<table class="stats" border="1px">
 						<tr>
-							<td>HP5</td>
-							<td id="OppHPRegen"></td>
-							<td>MP5</td>
-							<td id="OppManaRegen"></td>
+							<td class="wordstats">HP5</td>
+							<td class="numberstats" id="ChampHPRegen"></td>
+							<td class="wordstats">MP5</td>
+							<td class="numberstats" id="ChampManaRegen"></td>
 						</tr>
 						<tr>
-							<td>Attack Damage</td>
-							<td id="OppAttackDamage"></td>
-							<td>Ability Power</td>
-							<td id="OppAbilityPower"></td>
+							<td class="wordstats">Attack Dmg.</td>
+							<td class="numberstats" id="ChampAttackDamage"></td>
+							<td class="wordstats">Ability Power</td>
+							<td class="numberstats" id="ChampAbilityPower"></td>
 						</tr>
 						<tr>
-							<td>Armor Pen</td>
-							<td id="OppArmorPenetration"></td>
-							<td>Magic Pen</td>
-							<td id="OppMagicPenetration"></td>
+							<td class="wordstats">Armor Pen</td>
+							<td class="numberstats" id="ChampArmorPenetration"></td>
+							<td class="wordstats">Magic Pen</td>
+							<td class="numberstats" id="ChampMagicPenetration"></td>
 						</tr>
 						<tr>
-							<td>Life Steal</td>
-							<td id="OppLifeSteal"></td>
-							<td>Spell Vamp</td>
-							<td id="OppSpellVamp"></td>
+							<td class="wordstats">Life Steal</td>
+							<td class="numberstats" id="ChampLifeSteal"></td>
+							<td class="wordstats">Spell Vamp</td>
+							<td class="numberstats" id="ChampSpellVamp"></td>
 						</tr>
 						<tr>
-							<td>Attack Speed</td>
-							<td id="OppAttackSpeed"></td>
-							<td>CDR</td>
-							<td id="OppCooldownReduction"></td>
+							<td class="wordstats">Attack Spd.</td>
+							<td class="numberstats" id="ChampAttackSpeed"></td>
+							<td class="wordstats">CDR</td>
+							<td class="numberstats" id="ChampCooldownReduction"></td>
 						</tr>
 						<tr>
-							<td>Crit Chance</td>
-							<td id="OppCriticalChance"></td>
-							<td>Armor</td>
-							<td id="OppArmor"></td>
+							<td class="wordstats">Crit Chance</td>
+							<td class="numberstats" id="ChampCriticalChance"></td>
+							<td class="wordstats">Armor</td>
+							<td class="numberstats" id="ChampArmor"></td>
 						</tr>
 						<tr>
-							<td>Crit Damage</td>
-							<td id="OppCriticalDamage"></td>
-							<td>Magic Resist</td>
-							<td id="OppMagicResist"></td>
+							<td class="wordstats">Crit Damage</td>
+							<td class="numberstats" id="ChampCriticalDamage"></td>
+							<td class="wordstats">Magic Resist</td>
+							<td class="numberstats" id="ChampMagicResist"></td>
 						</tr>
 						<tr>
-							<td>Range</td>
-							<td id="OppRange"></td>
-							<td>Movement</td>
-							<td id="OppMovementSpeed"></td>
+							<td class="wordstats">Range</td>
+							<td class="numberstats" id="ChampRange"></td>
+							<td class="wordstats">Movement</td>
+							<td class="numberstats" id="ChampMovementSpeed"></td>
 						</tr>
 					</table>
 				</div>
-			</div> 
+
+<!-- Opponent Stats -->
+				<div id="opponentstats">
+					<table class="stats" border="1">
+						<tr>
+							<td class="wordstats">HP5</td>
+							<td class="numberstats" id="OppHPRegen"></td>
+							<td class="wordstats">MP5</td>
+							<td class="numberstats" id="OppManaRegen"></td>
+						</tr>
+						<tr>
+							<td class="wordstats">Attack Dmg.</td>
+							<td class="numberstats" id="OppAttackDamage"></td>
+							<td class="wordstats">Ability Power</td>
+							<td class="numberstats" id="OppAbilityPower"></td>
+						</tr>
+						<tr>
+							<td class="wordstats">Armor Pen</td>
+							<td id="OppArmorPenetration"></td>
+							<td class="wordstats">Magic Pen</td>
+							<td class="numberstats" id="OppMagicPenetration"></td>
+						</tr>
+						<tr>
+							<td class="wordstats">Life Steal</td>
+							<td class="numberstats" id="OppLifeSteal"></td>
+							<td class="wordstats">Spell Vamp</td>
+							<td class="numberstats" id="OppSpellVamp"></td>
+						</tr>
+						<tr>
+							<td class="wordstats">Attack Spd.</td>
+							<td class="numberstats" id="OppAttackSpeed"></td>
+							<td class="wordstats">CDR</td>
+							<td class="numberstats" id="OppCooldownReduction"></td>
+						</tr>
+						<tr>
+							<td class="wordstats">Crit Chance</td>
+							<td class="numberstats" id="OppCriticalChance"></td>
+							<td class="wordstats">Armor</td>
+							<td class="numberstats" id="OppArmor"></td>
+						</tr>
+						<tr>
+							<td class="wordstats">Crit Damage</td>
+							<td class="numberstats" id="OppCriticalDamage"></td>
+							<td class="wordstats">Magic Resist</td>
+							<td class="numberstats" id="OppMagicResist"></td>
+						</tr>
+						<tr>
+							<td class="wordstats">Range</td>
+							<td class="numberstats" id="OppRange"></td>
+							<td class="wordstats">Movement</td>
+							<td class="numberstats" id="OppMovementSpeed"></td>
+						</tr>
+					</table>
+				</div>
+
+				
+			 
 		</div>      
 	</div>
 		<!-- Initialize Foundation -->
