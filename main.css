@@ -120,6 +120,9 @@ title{
 }
 
 /* Stats Tables */
+.barnumber{
+	text-align: center;
+}
 
 #userstats{
 	width: 336px;

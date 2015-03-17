@@ -26,6 +26,8 @@ $(document).ready(function() {
 				$('#ChampImage').attr('src', path);
 				$('#ChampHPRegen').html(data.stats.hpregen);
 				$('#ChampManaRegen').html(data.stats.mpregen);
+				$('#ChampHealth').html(data.stats.hp);
+				$('#ChampMana').html(data.stats.mp);
 				$('#ChampArmorPenetration').html('0 | 0%');
 				$('#ChampMagicPenetration').html('0 | 0%');
 				$('#ChampCriticalDamage').html(200);
@@ -69,6 +71,8 @@ $(document).ready(function() {
 				$('#OppImage').attr('src', path);
 				$('#OppHPRegen').html(data.stats.hpregen);
 				$('#OppManaRegen').html(data.stats.mpregen);
+				$('#OppMana').html(data.stats.mp);
+				$('#OppHealth').html(data.stats.hp);
 				$('#OppArmorPenetration').html('0 | 0%');
 				$('#OppMagicPenetration').html('0 | 0%');
 				$('#OppCriticalDamage').html(200);
