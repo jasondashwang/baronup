@@ -197,3 +197,32 @@ h5 {
 	box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.5);
 }
 
+
+
+
+
+/* ABOUT PAGE */
+
+
+
+
+#finales{
+	width: 480px;
+	float: left;
+	border: solid black;
+}
+
+.profileicon{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: solid black;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#abhinav{
+	width: 480px;
+	float: right;
+	border: solid black;
+}
