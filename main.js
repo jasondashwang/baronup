@@ -20,7 +20,7 @@ $(document).ready(function() {
 				var name = event.target.id;
 				user = 'champion/' + event.target.id + '.json';
 				$.getJSON(user, function(data) {
-<<<<<<< HEAD
+
 					$(".pop").hide();
 					$('#ChampName').html(name);
 					var path = 'Images/champion/' + $('#ChampName').html() + '.png';
@@ -42,7 +42,7 @@ $(document).ready(function() {
 					$('#ChampRange').html(data.stats.attackrange);
 					$('#ChampMovementSpeed').html(data.stats.movespeed);	
 				});
-=======
+
 				$(".pop").hide();
 				$('#ChampName').html(name);
 				var path = 'Images/champion/' + $('#ChampName').html() + '.png';
@@ -65,7 +65,7 @@ $(document).ready(function() {
 				$('#ChampMagicResist').html(data.stats.spellblock);
 				$('#ChampRange').html(data.stats.attackrange);
 				$('#ChampMovementSpeed').html(data.stats.movespeed);	});
->>>>>>> gh-pages
+
 			}); 
 		});
 	});
