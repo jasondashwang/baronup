@@ -25,6 +25,8 @@ $(document).ready(function() {
 					$('#ChampName').html(name);
 					var path = 'Images/champion/' + $('#ChampName').html() + '.png';
 					$('#ChampImage').attr('src', path);
+					$('#ChampMana').html(data.stats.mp);
+					$('#ChampHealth').html(data.stats.hp);
 					$('#ChampHPRegen').html(data.stats.hpregen);
 					$('#ChampManaRegen').html(data.stats.mpregen);
 					$('#ChampArmorPenetration').html('0 | 0%');
@@ -67,6 +69,8 @@ $(document).ready(function() {
 					$('#OppName').html(name);
 					var path = 'Images/champion/' + $('#OppName').html() + '.png';
 					$('#OppImage').attr('src', path);
+					$('#OppMana').html(data.stats.mp);
+					$('#OppHealth').html(data.stats.hp);
 					$('#OppHPRegen').html(data.stats.hpregen);
 					$('#OppManaRegen').html(data.stats.mpregen);
 					$('#OppArmorPenetration').html('0 | 0%');
