@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	$.getJSON('item.json', function(data){
-		var items = '<ul style=list-style:none;margin-left:0>';
+		var items = '<ul id=itemsList style=list-style:none;margin-left:0>';
 		$.each(data.data, function(key, val) {
 			items += '<li style=display:inline;float:left;>';
-			items += '<img class=item height=48px width=48px src='+ 'Images/item/' + val.image.full +' id=' + key + ' />';
+			items += '<img class=items height=48px width=48px src=Images/item/' + val.image.full +' id=' + key + ' draggable=true ondragstart=drag(event)/>';
 			items += '</li>';
 		});
 		items += '</ul>'
@@ -49,7 +49,8 @@ $(document).ready(function() {
 					$('#ChampArmor').html(data.stats.armor);
 					$('#ChampMagicResist').html(data.stats.spellblock);
 					$('#ChampRange').html(data.stats.attackrange);
-					$('#ChampMovementSpeed').html(data.stats.movespeed);	
+					$('#ChampMovementSpeed').html(data.stats.movespeed);
+					$('#userSlider').foundation('slider', 'set_value', 1);
 				});
 			}); 
 		});
@@ -93,7 +94,8 @@ $(document).ready(function() {
 					$('#OppArmor').html(data.stats.armor);
 					$('#OppMagicResist').html(data.stats.spellblock);
 					$('#OppRange').html(data.stats.attackrange);
-					$('#OppMovementSpeed').html(data.stats.movespeed);	
+					$('#OppMovementSpeed').html(data.stats.movespeed);
+					$('#oppSlider').foundation('slider', 'set_value', 1);	
 				});
 			});
 		});
@@ -130,4 +132,20 @@ $(document).ready(function() {
 			$('#OppMagicResist').html((parseFloat(data.stats.spellblock) + (parseFloat(data.stats.spellblockperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 		});
 	});
+	$('.item').click(function(){
+		console.log('hi');
+		// var name = event.target.id;
+
+	});
+	function allowDrop(x) {
+		x.preventDefault();
+	}
+	function drag(x) {
+		x.dataTransfer.setData("text", ev.target.id);
+	}
+	function drop(x) {
+		x.preventDefault();
+    	var data = ev.dataTransfer.getData("text");
+    	x.target.appendChild(document.getElementById(data));
+	}
 });

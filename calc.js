@@ -29,7 +29,7 @@ var hits = function(AD, CC, CD, AS, AR, AP, APper, HP5, HP) {
 }
 
 var submit = function() {
-	var AD = parseInt(document.getElementById('AD').value, 10);  //parseInt(string, num base)
+	var AD = parseInt(document.getElementById('AD').value, 10);
 	var CC = parseInt(document.getElementById('CC').value, 10);
 	var CD = parseInt(document.getElementById('CD').value, 10);
 	var AS = parseInt(document.getElementById('AS').value, 10);
@@ -50,9 +50,4 @@ var submit = function() {
 	outputtext += " ";
 	outputtext += hits(AD, CC, CD, AS, AR, AP, APper, HP5, HP).toString();
 	document.getElementById('output').value = outputtext;
-}
-var changePicture = function() {
-	var name = document.getElementById(champ).value;
-	pathName = "/images/champion/".concat(name).concat(".png");
-	document.getElementById(champPicture).src = pathName;
 }
