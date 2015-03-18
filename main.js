@@ -98,12 +98,16 @@ $(document).ready(function() {
 		var level = parseInt($('#userSlider input').val());
 		var name = 'champion/' + $('#ChampName').html() + '.json';
 		$.getJSON(name, function(data) {
-			$('#ChampHealth').html(parseFloat(data.stats.hp) + ((level - 1)* parseFloat(data.stats.hpperlevel)));
+			$('#ChampHealth').html(parseFloat(data.stats.hp) + (parseFloat(data.stats.hpperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200))));
 			$('#ChampMana').html(
 				parseFloat(data.stats.mp) + (parseFloat(data.stats.mpperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200))));
-			$('#ChampHPRegen').html(parseFloat(data.stats.hpregen) + ((level - 1) * parseFloat(data.stats.hpperlevel)));
-			$('#ChampManaRegen').html(parseFloat(data.stats.mpregen) + ((level - 1) * parseFloat(data.stats.mpperlevel)));
-			$('#ChampHPRegen').html(parseFloat(data.stats.hpregen) + ((level - 1) * parseFloat(data.stats.hpperlevel)));
+			$('#ChampHPRegen').html(parseFloat(data.stats.hpregen) + (parseFloat(data.stats.hpregenperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200))));
+			$('#ChampManaRegen').html(parseFloat(data.stats.mpregen) + (parseFloat(data.stats.mpregenperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200))));
+			$('#ChampAttackDamage').html(parseFloat(data.stats.attackdamage) + (parseFloat(data.stats.attackdamageperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200))));
+			$('#ChampAttackSpeed').html(parseFloat(Math.round((0.625/(1 + parseFloat(data.stats.attackspeedoffset)))*1000)/1000).toFixed(3) + (parseFloat(data.stats.attackspeedperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200))));
+			$('#ChampArmor').html(parseFloat(data.stats.armor) + (parseFloat(data.stats.armorperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200))));
+			$('#ChampMagicResist').html(parseFloat(data.stats.spellblock) + (parseFloat(data.stats.spellblockperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200))));
+
 		})
 	});
 	$('#OppLevel').change(function(){
