@@ -59,7 +59,7 @@
 
 <!-- Item Table -->
 				<div id="MidSection" class="Champions">
-					<div id="items" style="overflow:scroll;">
+					<div id="items" style="overflow:scroll;height:192px">
 					
 					</div>
 <!-- Inventories -->
@@ -67,18 +67,18 @@
 						<div id="userinventory">
 							<table class="inventory user" border="1">
 								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 								</tr>
 								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 								</tr>
 								<tr>
 									<td>Dragon</td>
-									<td></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 									<td>Baron</td>
 								</tr>
 							</table>
@@ -86,18 +86,18 @@
 						<div id="opponentinventory">
 							<table class="inventory opponent" border="1">
 								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 								</tr>
 								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 								</tr>
 								<tr>
 									<td>Dragon</td>
-									<td></td>
+									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 									<td>Baron</td>
 								</tr>
 							</table>							
@@ -114,7 +114,7 @@
 								<img id="ChampImage" src='Images/champion/Unknown.png'>
 							</td>
 							<td rowspan="2">
-								<div class="range-slider vertical-range" data-slider data-options="vertical:true;start:1;end: 18;step:1;display_selector:#sliderOutput;" id="userSlider">
+								<div class="range-slider vertical-range" data-slider='1' data-options="vertical:true;start:1;end:18;step:1;display_selector:#sliderOutput;" id="userSlider">
 		  							<span class="range-slider-handle" role="slider" tabindex="0"></span>
 		  							<span class="range-slider-active-segment"></span>
 		 						 	<input type="hidden" id="userSlider">
@@ -154,7 +154,7 @@
 								<img id="OppImage" src='Images/champion/Unknown.png'>
 							</td>
 							<td rowspan="2">
-								<div class="range-slider vertical-range" data-slider data-options="vertical:true;start:1;end: 18;display_selector:#sliderOutput2;" id="oppSlider">
+								<div class="range-slider vertical-range" data-slider='1' data-options="vertical:true;start:1;end: 18;display_selector:#sliderOutput2;" id="oppSlider">
 		  							<span class="range-slider-handle" role="slider" tabindex="0"></span>
 		  							<span class="range-slider-active-segment"></span>
 		 						 	<input type="hidden">
@@ -290,10 +290,7 @@
 							<td class="numberstats" id="OppMovementSpeed"></td>
 						</tr>
 					</table>
-				</div>
-
-				
-			 
+				</div>	 
 		</div>      
 	</div>
 		<!-- Initialize Foundation -->
