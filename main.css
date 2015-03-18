@@ -86,11 +86,7 @@ title{
 	margin-top: 0;
 	height: 180px;
 	margin-bottom: 10px; 
-}
-
-#ItemsTable{
-	height: 100%;
-	width: 100%;
+	/*padding-left: -10px;*/
 }
 
 /* Inventory */
