@@ -118,9 +118,13 @@ title{
 /* Stats Tables */
 .mana{
 	background-color: #005CE6;
+	border-radius: 12px; 
+	text-align: center;
 }
 .health{
 	background-color: #00FF99;
+	border-radius: 12px;
+	text-align: center; 
 }
 
 .barnumber{
