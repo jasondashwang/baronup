@@ -31,6 +31,20 @@ body {
 	height: 400px;
 }
 
+#upper-half{
+	width: 960px;
+}
+
+#bottom-half{
+	width: 960px;
+}
+
+#middle-lower{
+	float: left;
+	width: 288px;
+
+}
+
 #MidSection {
 	float: center;
 	width: 480px;
@@ -138,11 +152,12 @@ title{
 
 #opponentstats{
 	width: 336px;
-	float: right;
+	float: left;
 }
 
 .stats{
 	width: 100%;
+
 }
 
 .numberstats{
@@ -210,6 +225,31 @@ img:hover, img:focus {
     height: 175px;
     padding: 0 5px;
 }
+
+/* Calculate Button */
+#buttonarea{
+	width: 288px;
+}
+
+#calculate{
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+
+/* Display Results */
+#results{
+	width: 280px;
+	border-color: purple;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.thresult{
+	width: 160px;
+	text-align: center;
+}
+
 
 /* ABOUT PAGE */
 
