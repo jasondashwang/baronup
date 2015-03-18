@@ -1,14 +1,21 @@
 $(document).ready(function() {
+	$.getJSON('item.json', function(data){
+		var items = '<ul style=list-style:none;margin-left:0>';
+		$.each(data.data, function(key, val) {
+			items += '<li style=display:inline;float:left;>';
+			items += '<img class=item height=48px width=48px src='+ 'Images/item/' + val.image.full +' id=' + key + ' />';
+			items += '</li>';
+		});
+		items += '</ul>'
+		$('#items').html(items);
+	});
 	var userChampion;
 	var user;
 	$(".pop").hide();
 	$(".ChampSelect").click(function() {
 		$(".pop").show();
-		$('#boxclose').click(function() {
-			console.log('hi');	//$('.pop').hide();
-		});	
 		$.getJSON("championFull.json", function(data) {
-			var output = '<ul style=list-style:none;>';
+			var output = '<ul style=list-style:none;margin-left:-70>';
 			$.each(data.data, function(key, val) {
 				output += '<li style=display:inline;float:left;height:10%;width:10%;>';
 				output += '<img src='+'Images/champion/'+val.image.full+' id=' + val.id + ' />';
@@ -106,13 +113,13 @@ $(document).ready(function() {
 			$('#ChampAttackSpeed').html((parseFloat(Math.round((0.625/(1 + parseFloat(data.stats.attackspeedoffset)))*1000)/1000) * (1 + (((parseFloat(data.stats.attackspeedperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))) / 100))).toFixed(3));
 			$('#ChampArmor').html((parseFloat(data.stats.armor) + (parseFloat(data.stats.armorperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 			$('#ChampMagicResist').html((parseFloat(data.stats.spellblock) + (parseFloat(data.stats.spellblockperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
-
 		})
 	});	
 	$('#oppSlider').change(function(){
 		var level = parseInt($('#oppSlider input').val());
 		var name = 'champion/' + $('#OppName').html() + '.json';
 		$.getJSON(name, function(data) {
+
 			$('#OppHealth').html((parseFloat(data.stats.hp) + (parseFloat(data.stats.hpperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 			$('#OppMana').html((parseFloat(data.stats.mp) + (parseFloat(data.stats.mpperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 			$('#OppHPRegen').html((parseFloat(data.stats.hpregen) + (parseFloat(data.stats.hpregenperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
