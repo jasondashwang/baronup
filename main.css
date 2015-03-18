@@ -120,6 +120,13 @@ title{
 }
 
 /* Stats Tables */
+.mana{
+	background-color: #005CE6;
+}
+.health{
+	background-color: #00FF99;
+}
+
 .barnumber{
 	text-align: center;
 }
@@ -235,3 +242,4 @@ img:hover, img:focus {
 	float: right;
 	border: solid black;
 }
+

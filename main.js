@@ -103,7 +103,7 @@ $(document).ready(function() {
 			$('#ChampHPRegen').html((parseFloat(data.stats.hpregen) + (parseFloat(data.stats.hpregenperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 			$('#ChampManaRegen').html((parseFloat(data.stats.mpregen) + (parseFloat(data.stats.mpregenperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 			$('#ChampAttackDamage').html((parseFloat(data.stats.attackdamage) + (parseFloat(data.stats.attackdamageperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
-			//$('#ChampAttackSpeed').html(parseFloat(Math.round((0.625/(1 + parseFloat(data.stats.attackspeedoffset)))*1000)/1000).toFixed(3) + (parseFloat(data.stats.attackspeedperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200))));
+			$('#ChampAttackSpeed').html((parseFloat(Math.round((0.625/(1 + parseFloat(data.stats.attackspeedoffset)))*1000)/1000) * (1 + (((parseFloat(data.stats.attackspeedperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))) / 100))).toFixed(3));
 			$('#ChampArmor').html((parseFloat(data.stats.armor) + (parseFloat(data.stats.armorperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 			$('#ChampMagicResist').html((parseFloat(data.stats.spellblock) + (parseFloat(data.stats.spellblockperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 
@@ -118,7 +118,7 @@ $(document).ready(function() {
 			$('#OppHPRegen').html((parseFloat(data.stats.hpregen) + (parseFloat(data.stats.hpregenperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 			$('#OppManaRegen').html((parseFloat(data.stats.mpregen) + (parseFloat(data.stats.mpregenperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 			$('#OppAttackDamage').html((parseFloat(data.stats.attackdamage) + (parseFloat(data.stats.attackdamageperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
-			//$('#ChampAttackSpeed').html(parseFloat(Math.round((0.625/(1 + parseFloat(data.stats.attackspeedoffset)))*1000)/1000).toFixed(3) + (parseFloat(data.stats.attackspeedperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200))));
+			$('#OppAttackSpeed').html((parseFloat(Math.round((0.625/(1 + parseFloat(data.stats.attackspeedoffset)))*1000)/1000) * (1 + (((parseFloat(data.stats.attackspeedperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))) / 100))).toFixed(3));
 			$('#OppArmor').html((parseFloat(data.stats.armor) + (parseFloat(data.stats.armorperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 			$('#OppMagicResist').html((parseFloat(data.stats.spellblock) + (parseFloat(data.stats.spellblockperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 		});
