@@ -198,11 +198,7 @@ title{
     padding: 10px;
     overflow: scroll;
 }
-h5 {
-	display: block;
-	float: left;
-	left: 50px;
-}
+
 img:hover, img:focus {
 	box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.8);
 }
@@ -217,10 +213,14 @@ img:hover, img:focus {
 
 /* ABOUT PAGE */
 
-
+.information{
+	list-style: none;
+	text-align: center;
+}
 
 
 #finales{
+	margin-top: 40px;
 	width: 480px;
 	float: left;
 	border: solid black;
@@ -236,6 +236,7 @@ img:hover, img:focus {
 }
 
 #abhinav{
+	margin-top: 40px;
 	width: 480px;
 	float: right;
 	border: solid black;
