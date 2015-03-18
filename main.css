@@ -86,11 +86,7 @@ title{
 	margin-top: 0;
 	height: 180px;
 	margin-bottom: 10px; 
-}
-
-#ItemsTable{
-	height: 100%;
-	width: 100%;
+	/*padding-left: -10px;*/
 }
 
 /* Inventory */
@@ -120,6 +116,17 @@ title{
 }
 
 /* Stats Tables */
+.mana{
+	background-color: #005CE6;
+	border-radius: 12px; 
+	text-align: center;
+}
+.health{
+	background-color: #00FF99;
+	border-radius: 12px;
+	text-align: center; 
+}
+
 .barnumber{
 	text-align: center;
 }
@@ -235,3 +242,4 @@ img:hover, img:focus {
 	float: right;
 	border: solid black;
 }
+

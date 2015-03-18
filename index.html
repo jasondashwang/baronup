@@ -59,39 +59,8 @@
 
 <!-- Item Table -->
 				<div id="MidSection" class="Champions">
-					<div id="items">
-						<table border="1px" id="ItemsTable">
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-						</table>
+					<div id="items" style="overflow:scroll;">
+					
 					</div>
 <!-- Inventories -->
 					<div id="inventories">
@@ -162,21 +131,15 @@
 
 <!-- User Health and Mana -->
 
-					<table class="championvariables" border="1px">
+					<table class="championvariables">
 						<tr>
 							<td class="tablewords">Health</td>
-							<td colspan="3" class="bars" id="ChampHealth">
-								<div class="radius progress success large-12">
-		  							<span class="meter" style="width: 100%"></span>
-								</div>
+							<td colspan="3" class="bars health" id="ChampHealth">
 							</td>
 						</tr>
 						<tr>
 							<td class="tablewords">Mana</td>
-							<td colspan="3" class="bars" id="ChampMana">
-								<div class="radius progress large-12">
-		  							<span class="meter" style="width: 100%"></span>
-								</div>
+							<td colspan="3" class="bars mana" id="ChampMana">
 							</td>
 						</tr>
 					</table> 
@@ -191,7 +154,7 @@
 								<img id="OppImage" src='Images/champion/Unknown.png'>
 							</td>
 							<td rowspan="2">
-								<div class="range-slider vertical-range" data-slider data-options="vertical:true;start:1;end: 18;display_selector:#sliderOutput2;">
+								<div class="range-slider vertical-range" data-slider data-options="vertical:true;start:1;end: 18;display_selector:#sliderOutput2;" id="oppSlider">
 		  							<span class="range-slider-handle" role="slider" tabindex="0"></span>
 		  							<span class="range-slider-active-segment"></span>
 		 						 	<input type="hidden">
@@ -208,21 +171,15 @@
 
 <!-- Opponent Health and Mana -->
 
-					<table class="championvariables" border="1">
+					<table class="championvariables">
 						<tr>
 							<td class="tablewords">Health</td>
-							<td colspan="3" id="OppHealth">
-								<div class="radius progress success large-12">
-		  							<span class="meter" style="width: 100%"></span>
-								</div>
+							<td colspan="3" class='bars health' id="OppHealth">
 							</td>
 						</tr>
 						<tr>
 							<td class="tablewords">Mana</td>
-							<td colspan="3" id="OppMana">
-								<div class="progress large-12">
-		  							<span class="meter" style="width: 100%"></span>
-								</div>
+							<td colspan="3" class='bars mana' id="OppMana">
 							</td>
 						</tr>
 					</table>
@@ -340,6 +297,9 @@
 		</div>      
 	</div>
 		<!-- Initialize Foundation -->
+		<link rel="stylesheet" href="ui/jquery-ui.min.css">
+		<script src="ui/external/jquery/jquery.js"></script>
+		<script src="ui/jquery-ui.min.js"></script>
 		<script src="jquery.min.js"></script>
 		<script>
 	  		$(document).foundation();
