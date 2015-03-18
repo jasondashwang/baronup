@@ -1,10 +1,8 @@
 $(document).ready(function() {
 	$.getJSON('item.json', function(data){
-		var items = '<ul id=itemsList style=list-style:none;margin-left:0>';
+		var items = '';
 		$.each(data.data, function(key, val) {
-			items += '<li class=items style=display:inline;float:left;>';
-			items += '<img height=48px width=48px src=Images/item/' + val.image.full +' value=' + key + ' />';
-			items += '</li>';
+			items += '<img class=draggable style=display:inline;float:left; height=48px width=48px src=Images/item/' + val.image.full +' value=' + key + ' />';
 		});
 		items += '</ul>'
 		$('#items').html(items);
