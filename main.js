@@ -16,7 +16,7 @@ $(document).ready(function() {
 				accept: '.draggable',
  				activeClass: "ui-state-highlight",
       			drop: function( event, ui ) {
-      				var output = '<img height=48px width=48px class=clonedraggable src=' + $(ui.draggable).attr('src') + '/>';
+      				var output = '<img height=48px width=48px class=clonedraggable src=' + $(ui.draggable).attr('src') + '>';
       		 	 	$(event.target).html(output);
       			}	
 			});
