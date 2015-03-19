@@ -103,7 +103,6 @@ title{
 
 #items {
 	margin-top: 0;
-	height: 180px;
 	margin-bottom: 10px; 
 	/*padding-left: -10px;*/
 }
@@ -220,7 +219,7 @@ title{
     text-align: center;
     z-index: 11;
     padding: 10px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 img:hover, img:focus {
