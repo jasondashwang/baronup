@@ -288,6 +288,7 @@ img:hover, img:focus {
 	width: 480px;
 	float: left;
 	border: solid black;
+	background-color: white;
 }
 
 .profileicon{
@@ -307,6 +308,7 @@ img:hover, img:focus {
 	width: 480px;
 	float: right;
 	border: solid black;
+	background-color: white;
 }
 
 .titlecenter{
