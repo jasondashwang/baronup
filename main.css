@@ -269,7 +269,6 @@ img:hover, img:focus {
 
 
 #finales{
-	margin-top: 40px;
 	width: 480px;
 	float: left;
 	border: solid black;
@@ -284,10 +283,16 @@ img:hover, img:focus {
 	margin-bottom: 30px;
 }
 
+#madeby{
+	width: 100%;
+}
+
 #abhinav{
-	margin-top: 40px;
 	width: 480px;
 	float: right;
 	border: solid black;
 }
 
+.titlecenter{
+	text-align: center;
+}
