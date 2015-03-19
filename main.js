@@ -2,10 +2,30 @@ $(document).ready(function() {
 	$.getJSON('item.json', function(data){
 		var items = '';
 		$.each(data.data, function(key, val) {
-			items += '<img class=draggable style=display:inline;float:left; height=48px width=48px src=Images/item/' + val.image.full +' value=' + key + ' />';
+			items += '<img class=draggable style=display:inline;float:left;z-index:100; height=48px width=48px src=Images/item/' + val.image.full +' value=' + key + ' />';
 		});
-		items += '</ul>'
 		$('#items').html(items);
+		$(function() {
+			$(".draggable").draggable({ 
+  				containment: '#MidSection',
+  				scroll: false,
+  				revert: 'invalid',
+  				helper: 'clone'
+			});
+			$('.droppable').droppable({
+				accept: '.draggable',
+ 				activeClass: "ui-state-highlight",
+      			drop: function( event, ui ) {
+      				var output = '<img height=48px width=48px class=clonedraggable src=' + $(ui.draggable).attr('src') + '/>';
+      		 	 	$(event.target).html(output);
+      			}	
+			});
+			$('.droppable').draggable({
+				containment: '#MidSection',
+  				scroll: false,
+  				revert: 'invalid'
+			});
+		});
 	});
 	var userChampion;
 	var user;
@@ -16,7 +36,7 @@ $(document).ready(function() {
 			var output = '<ul style=list-style:none;margin-left:-70>';
 			$.each(data.data, function(key, val) {
 				output += '<li style=display:inline;float:left;height:10%;width:10%;>';
-				output += '<img src='+'Images/champion/'+val.image.full+' id=' + val.id + ' />';
+				output += '<img src='+'Images/champion/'+val.image.full+' id=' + val.id + ' style=name:'+ val.name + ';>';
 				output += '</li>';
 			});
 			output += '</ul>';
@@ -27,8 +47,8 @@ $(document).ready(function() {
 				$.getJSON(user, function(data) {
 
 					$(".pop").hide();
-					$('#ChampName').html(name);
-					var path = 'Images/champion/' + $('#ChampName').html() + '.png';
+					$('#ChampName').html(data.name);
+					var path = 'Images/champion/' + name + '.png';
 					$('#ChampImage').attr('src', path);
 					$('#ChampMana').html(data.stats.mp);
 					$('#ChampHealth').html(data.stats.hp);
@@ -72,8 +92,8 @@ $(document).ready(function() {
 				$.getJSON(opp, function(data) {
 
 					$(".pop").hide();
-					$('#OppName').html(name);
-					var path = 'Images/champion/' + $('#OppName').html() + '.png';
+					$('#OppName').html(data.name);
+					var path = 'Images/champion/' + name + '.png';
 					$('#OppImage').attr('src', path);
 					$('#OppMana').html(data.stats.mp);
 					$('#OppHealth').html(data.stats.hp);
@@ -130,4 +150,18 @@ $(document).ready(function() {
 			$('#OppMagicResist').html((parseFloat(data.stats.spellblock) + (parseFloat(data.stats.spellblockperlevel) * ((7/400) * ((Math.pow(level, 2))) + ((267 * level)/400) - (137/200)))).toFixed(2));
 		});
 	});
+	$('#calculate').click(function() {
+		var damageReduction = (100.0 / (100.0 + parseFloat($('#OppArmor').html())));
+		var rawDPS = parseFloat($('#ChampAttackDamage').html()) * parseFloat($('#ChampAttackSpeed').html());
+		var DPS = rawDPS * damageReduction - (parseFloat($('#OppHPRegen').html())/5.0);
+		var time = parseFloat($('#OppHealth').html()) / DPS;
+		var hits = parseFloat(time) * parseFloat($('#ChampAttackSpeed').html());
+
+		$('#dps').html(DPS.toFixed(2));
+		$('#time').html(time.toFixed(2));
+		$('#hits').html(Math.ceil(hits));	
+	});
+	$(function() {
+
+	})
 });
