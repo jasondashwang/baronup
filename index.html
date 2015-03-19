@@ -7,7 +7,6 @@
 		<link rel="stylesheet" type="text/css" href="main.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="BaronUp: League of Legends Toolkit" content="League of Legends DPS Calculator">
-
 		<script src="calc.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="favicon.ico" >
@@ -54,7 +53,7 @@
 			</nav>
 			<!--Page Div-->
 			<div class="entire-page">
-
+			<div id="upper-half">
 				<!--Mid Section-->
 
 <!-- Item Table -->
@@ -67,18 +66,18 @@
 						<div id="userinventory">
 							<table class="inventory user" border="1">
 								<tr>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td><div class="droppable"></div></td>
+									<td><div class="droppable"></div></td>
+									<td><div class="droppable"></div></td>
 								</tr>
 								<tr>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td><div class="droppable"></div></td>
+									<td><div class="droppable"></div></td>
+									<td><div class="droppable"></div></td>
 								</tr>
 								<tr>
 									<td>Dragon</td>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td><div class="droppable"></div></td>
 									<td>Baron</td>
 								</tr>
 							</table>
@@ -86,18 +85,18 @@
 						<div id="opponentinventory">
 							<table class="inventory opponent" border="1">
 								<tr>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td><div class="droppable"></div></td>
+									<td><div class="droppable"></div></td>
+									<td><div class="droppable"></div></td>
 								</tr>
 								<tr>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td><div class="droppable"></div></td>
+									<td><div class="droppable"></div></td>
+									<td><div class="droppable"></div></td>
 								</tr>
 								<tr>
 									<td>Dragon</td>
-									<td class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+									<td><div class="droppable"></div></td>
 									<td>Baron</td>
 								</tr>
 							</table>							
@@ -111,7 +110,7 @@
 					<table class="championvariables" border="1px">
 						<tr>
 							<td colspan="3"  class="ChampSelect">
-								<img id="ChampImage" src='Images/champion/Unknown.png'>
+								<img id="ChampImage" class="imageselector" src='Images/champion/Unknown.png'>
 							</td>
 							<td rowspan="2">
 								<div class="range-slider vertical-range" data-slider='1' data-options="vertical:true;start:1;end:18;step:1;display_selector:#sliderOutput;" id="userSlider">
@@ -150,9 +149,7 @@
 			<div class="upper-right-page Champions">
 					<table class="championvariables" border="1px">
 						<tr>
-							<td colspan="3" class="OppSelect">
-								<img id="OppImage" src='Images/champion/Unknown.png'>
-							</td>
+
 							<td rowspan="2">
 								<div class="range-slider vertical-range" data-slider='1' data-options="vertical:true;start:1;end: 18;display_selector:#sliderOutput2;" id="oppSlider">
 		  							<span class="range-slider-handle" role="slider" tabindex="0"></span>
@@ -162,6 +159,9 @@
 								<div> 
 									<span id="sliderOutput2"></span>
 								</div>
+							</td>
+							<td colspan="3" class="OppSelect">
+								<img id="OppImage" class="imageselector" src='Images/champion/Unknown.png'>
 							</td>
 						</tr>
 						<tr>
@@ -184,6 +184,10 @@
 						</tr>
 					</table>
 			</div>
+		</div>
+
+<!-- Botton Half of Page -->
+			<div id="bottom-half"
 <!-- User Stat Table -->
 				<div id="userstats">
 					<table class="stats" border="1px">
@@ -238,6 +242,31 @@
 					</table>
 				</div>
 
+<!-- Middle Lower -->
+	<!-- Calculate Button -->
+		<div id="middle-lower">
+			<div id="buttonarea">
+				<a id="calculate" title="fuck you" class="button radius">Calculate</a>
+			</div>	 
+			<div id="displayer">
+				<h4 id="resultsword">Results</h4>
+				<table border="1" id="results">
+					<tr>
+						<td class="thresult">Damage Per Second</td>
+						<td id="dps"></td>
+					</tr>
+					<tr>
+						<td class="thresult">Time Taken</td>
+						<td id="time"></td>
+					</tr>
+					<tr>
+						<td class="thresult">Number of Hits</td>
+						<td id="hits"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
 <!-- Opponent Stats -->
 				<div id="opponentstats">
 					<table class="stats" border="1">
@@ -290,14 +319,13 @@
 							<td class="numberstats" id="OppMovementSpeed"></td>
 						</tr>
 					</table>
-				</div>	 
+				</div>
+			</div>
 		</div>      
 	</div>
-		<!-- Initialize Foundation -->
-		<link rel="stylesheet" href="ui/jquery-ui.min.css">
-		<script src="ui/external/jquery/jquery.js"></script>
-		<script src="ui/jquery-ui.min.js"></script>
+		<!-- Initialize Foundation -->		
 		<script src="jquery.min.js"></script>
+		<script src="jquery-ui/jquery-ui.min.js"></script>
 		<script>
 	  		$(document).foundation();
 		</script>

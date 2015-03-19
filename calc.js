@@ -1,4 +1,3 @@
-
 var rawDPS =  function(AD, CC, CD, AS) {
 	var rawDPS = AD * (1 + ((CC/100) * (1 + ((CD/100) - 2)))) * AS;
 	return rawDPS;
