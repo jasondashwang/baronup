@@ -20,10 +20,8 @@ $(document).ready(function() {
       		 	 	$(event.target).html(output);
       			}	
 			});
-			$('.droppable').draggable({
-				containment: '#MidSection',
-  				scroll: false,
-  				revert: 'invalid'
+			$('.droppable').click(function(event) {
+				$(event.target).remove();
 			});
 		});
 	});
