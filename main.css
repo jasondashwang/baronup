@@ -103,7 +103,6 @@ title{
 
 #items {
 	margin-top: 0;
-	height: 180px;
 	margin-bottom: 10px; 
 	/*padding-left: -10px;*/
 }
@@ -138,6 +137,17 @@ title{
 	height: 48px;
 	margin: 0 auto;
 }
+
+.baron{
+	background-image: url(Images/baron.png);
+	background-size: 66px 66px;
+}
+
+.dragon{
+	background-image: url(Images/dragon.png);
+	background-size: 66px 66px;
+}
+
 /* Stats Tables */
 .mana{
 	background-color: #005CE6;
@@ -157,11 +167,13 @@ title{
 #userstats{
 	width: 336px;
 	float: left;
+	border: 2px solid black;
 }
 
 #opponentstats{
 	width: 336px;
 	float: left;
+	border: 2px solid black;
 }
 
 .stats{
@@ -220,7 +232,7 @@ title{
     text-align: center;
     z-index: 11;
     padding: 10px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 img:hover, img:focus {
@@ -254,7 +266,7 @@ img:hover, img:focus {
 	margin-right: 4px;
 }
 
-#centerword{
+.centerword{
 	text-align: center;
 }
 
@@ -276,6 +288,7 @@ img:hover, img:focus {
 	width: 480px;
 	float: left;
 	border: solid black;
+	background-color: white;
 }
 
 .profileicon{
@@ -295,6 +308,7 @@ img:hover, img:focus {
 	width: 480px;
 	float: right;
 	border: solid black;
+	background-color: white;
 }
 
 .titlecenter{
