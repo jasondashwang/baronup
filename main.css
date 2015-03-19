@@ -137,6 +137,17 @@ title{
 	height: 48px;
 	margin: 0 auto;
 }
+
+.baron{
+	background-image: url(Images/baron.png);
+	background-size: 66px 66px;
+}
+
+.dragon{
+	background-image: url(Images/dragon.png);
+	background-size: 66px 66px;
+}
+
 /* Stats Tables */
 .mana{
 	background-color: #005CE6;
@@ -156,11 +167,13 @@ title{
 #userstats{
 	width: 336px;
 	float: left;
+	border: 2px solid black;
 }
 
 #opponentstats{
 	width: 336px;
 	float: left;
+	border: 2px solid black;
 }
 
 .stats{
@@ -253,7 +266,7 @@ img:hover, img:focus {
 	margin-right: 4px;
 }
 
-#resultsword{
+.centerword{
 	text-align: center;
 }
 
