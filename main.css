@@ -8,6 +8,11 @@ body {
     background: #fff;
 }
 
+.imageselector{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
 /* Major DIVS */
 .Champions {
 	display: inline-block;
@@ -243,6 +248,10 @@ img:hover, img:focus {
 	border-color: purple;
 	margin-left: 4px;
 	margin-right: 4px;
+}
+
+#resultsword{
+	text-align: center;
 }
 
 .thresult{
