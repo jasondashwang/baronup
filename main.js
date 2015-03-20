@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$.getJSON('item.json', function(data){
 		var items = '';
 		$.each(data.data, function(key, val) {
-			items += '<img class=draggable style=display:inline;float:left;z-index:100; height=47px width=46px src=Images/item/' + val.image.full +' value=' + key + ' />';
+			items += '<img class=draggable style=display:inline;float:left;z-index:100; height=48px width=48px src=Images/item/' + val.image.full +' value=' + key + ' />';
 		});
 		$('#items').html(items);
 		$(function() {
