@@ -232,7 +232,7 @@ title{
     text-align: center;
     z-index: 11;
     padding: 10px;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 img:hover, img:focus {
@@ -313,4 +313,23 @@ img:hover, img:focus {
 
 .titlecenter{
 	text-align: center;
+}
+a.boxclose{
+    float:left;
+    margin-top:-30px;
+    margin-right:-30px;
+    cursor:pointer;
+    color: #fff;
+    border: 1px solid #AEAEAE;
+    border-radius: 30px;
+    background: #605F61;
+    font-size: 31px;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 0px;
+    padding: 11px 3px;   
+    z-index: 110;    
+}
+.boxclose:before {
+    content: "×";
 }

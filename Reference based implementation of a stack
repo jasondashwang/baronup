@@ -1,0 +1,9 @@
+Reference based implementation of a stack:
+
+- Last in First out data structure (LIFO)
+- top at the beggining of list instead
+
+Reference base implementation of a queue:
+
+- First in First out data structure (FIFO)
+- 
