@@ -2,7 +2,8 @@ $(document).ready(function() {
 	$.getJSON('item.json', function(data){
 		var items = '';
 		$.each(data.data, function(key, val) {
-			items += '<img class=draggable style=display:inline;float:left;z-index:100; height=48px width=48px src=Images/item/' + val.image.full +' value=' + key + ' />';
+			items += '<img class=draggable style=display:inline;float:left;z-index:100; height=48px width=48px src=Images/item/' + val.image.full +' id=' + key + ' />';
+			var itemname = ('#' + key);
 		});
 		$('#items').html(items);
 		$(function() {
@@ -149,15 +150,17 @@ $(document).ready(function() {
 		});
 	});
 	$('#calculate').click(function() {
-		var damageReduction = (100.0 / (100.0 + parseFloat($('#OppArmor').html())));
-		var rawDPS = parseFloat($('#ChampAttackDamage').html()) * parseFloat($('#ChampAttackSpeed').html());
-		var DPS = rawDPS * damageReduction - (parseFloat($('#OppHPRegen').html())/5.0);
-		var time = parseFloat($('#OppHealth').html()) / DPS;
-		var hits = parseFloat(time) * parseFloat($('#ChampAttackSpeed').html());
+		if ($('#OppHealth').html().length > 0 && $('#ChampHealth').html().length > 0) {
+			var damageReduction = (100.0 / (100.0 + parseFloat($('#OppArmor').html())));
+			var rawDPS = parseFloat($('#ChampAttackDamage').html()) * parseFloat($('#ChampAttackSpeed').html());
+			var DPS = rawDPS * damageReduction - (parseFloat($('#OppHPRegen').html())/5.0);
+			var time = parseFloat($('#OppHealth').html()) / DPS;
+			var hits = parseFloat(time) * parseFloat($('#ChampAttackSpeed').html());
 
-		$('#dps').html(DPS.toFixed(2));
-		$('#time').html(time.toFixed(2));
-		$('#hits').html(Math.ceil(hits));	
+			$('#dps').html(DPS.toFixed(2));
+			$('#time').html(time.toFixed(2));
+			$('#hits').html(Math.ceil(hits));	
+		}
 	});
 	$(function() {
 
