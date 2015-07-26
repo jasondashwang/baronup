@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="Champion">
 <head>
   <title>Baronup</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -7,7 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
 <%= yield %>
-
+</div>
 </body>
 </html>

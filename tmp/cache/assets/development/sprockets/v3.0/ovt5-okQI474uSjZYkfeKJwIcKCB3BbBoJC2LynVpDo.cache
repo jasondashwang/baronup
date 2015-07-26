@@ -1,0 +1,15 @@
+I"Ú(function() {
+  this.championsCtrl = function($scope) {
+    return $scope.entries = [
+      {
+        name: "Jimi"
+      }, {
+        name: "Eric"
+      }, {
+        name: "Abhinav"
+      }
+    ];
+  };
+
+}).call(this);
+:ET
