@@ -48,3 +48,67 @@
   -webkit-transform: translateY(-8px);
   transform: translateY(-8px);
 }
+
+
+/* Wireframe */
+#fullWrap {
+	width: 1000px;
+	height: 700px;
+	margin: 0 auto;
+}
+
+.attackSide, .defenseSide{
+	float: left;
+	height: 100%;
+	width: 225px;
+	.championSelect {
+		width: 225px;
+		height: 225px;
+		background-color: red;
+		}
+	.stats{
+		width: 100%;
+		height: 425px;
+		background-color: green;
+	}
+	.levelSelector{
+		width: 100%;
+		height: 50px;
+		background-color: blue;
+	}
+}
+
+.centerPiece{
+	float: left;
+	width: 550px;
+	height: 100%;
+	#itemBox{
+		background-color: purple;
+		width: 100%;
+		height: 275px;
+	}
+	#inventories{
+		width: 100%;
+		height: 175px;
+		#attackInventory{
+			float: left;
+			background-color: yellow;
+			width: 50%;
+			height: 100%;
+		}
+		#defenseInventory{
+			float: left;
+			background-color: orange;
+			width: 50%;
+			height: 100%;
+
+		}
+	}
+
+}
+
+/* Misc. */
+.spacer{
+	margin: 0 auto;
+}
+
