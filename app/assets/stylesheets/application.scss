@@ -49,11 +49,17 @@
   transform: translateY(-8px);
 }
 
+.wordstats {
+	min-width: 85px;
+}
+.numberstats {
+	min-width: 52px;
+}
 
 /* Wireframe */
 #fullWrap {
 	width: 1000px;
-	height: 700px;
+	height: 1000px;
 	margin: 0 auto;
 }
 
@@ -63,18 +69,21 @@
 	width: 225px;
 	.championSelect {
 		width: 225px;
-		height: 225px;
+		height: 400px;
 		background-color: red;
+		.loadingImage {
+			width: 225px;
+			height: 400px;
 		}
-	.stats{
-		width: 100%;
-		height: 425px;
-		background-color: green;
 	}
-	.levelSelector{
+	.levelSelector {
 		width: 100%;
 		height: 50px;
 		background-color: blue;
+	}
+	.btn {
+		width: 225px;
+		margin-top: 5px;
 	}
 }
 
@@ -82,33 +91,34 @@
 	float: left;
 	width: 550px;
 	height: 100%;
-	#itemBox{
-		background-color: purple;
-		width: 100%;
-		height: 275px;
+	.stats{
+		float: left;
+		width: 50%;
+		height: 450px;
 	}
-	#inventories{
-		width: 100%;
-		height: 175px;
-		#attackInventory{
+	#attackInventory{
 			float: left;
-			background-color: yellow;
+			background-color: green;
 			width: 50%;
-			height: 100%;
+			height: 150px;
 		}
-		#defenseInventory{
+	#defenseInventory{
 			float: left;
-			background-color: orange;
+			background-color: purple;
 			width: 50%;
-			height: 100%;
-
+			height: 150px;
 		}
-	}
+}
 
+#attackStats{
+	background-color:yellow;
+}
+
+#defenseStats{
+	background-color:orange;
 }
 
 /* Misc. */
 .spacer{
 	margin: 0 auto;
 }
-
