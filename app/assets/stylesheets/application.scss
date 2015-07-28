@@ -1,23 +1,30 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "hover.css";
 
-.user_champion_select {
-	overflow: scroll;
+.inventory {
 	ul {
-		background-color: black;
+		list-style-type: none;
+		li {
+			display: block;
+			float: left;
+		}
+	}
+}
+.user_champion_select {
+	ul {
 		list-style-type: none;
 		li {
 			display: block;
 			float: left;
 			img {
-				width: 60px;
-				height: 60px;
+				width: 80px;
+				height: 80px;
 			}
 		}
 	}
 }
 .modal-body {
+	overflow: scroll;
 	height: 450px;
 }
 .modal-header {
@@ -26,7 +33,6 @@
 		height: 100%;
 	}
 }
-/* Grow */
 .hvr-grow {
   display: inline-block;
   vertical-align: middle;
@@ -41,35 +47,26 @@
   -webkit-transition-property: transform;
   transition-property: transform;
 }
-
-/* Float */
-.hvr-float {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-.wordstats {
-	min-width: 85px;
+table {
+	tr {
+		max-height: 30px;
+		.wordstats {
+			min-width: 85px;
+		}
+		.numberstats {
+			min-width: 52px;
+		}
+		td {
+			text-align: center;
+		}
+	}
 }
-.numberstats {
-	min-width: 52px;
-}
+
 
 /* Wireframe */
 #fullWrap {
@@ -85,7 +82,7 @@
 	.championSelect {
 		width: 225px;
 		height: 400px;
-		background-color: red;
+		border: solid black 1px;
 		.loadingImage {
 			width: 225px;
 			height: 400px;
@@ -94,7 +91,7 @@
 	.levelSelector {
 		width: 100%;
 		height: 50px;
-		background-color: blue;
+		border: solid black 1px;
 	}
 	.btn {
 		width: 225px;
@@ -113,26 +110,25 @@
 	}
 	#attackInventory{
 			float: left;
-			background-color: green;
+			border: solid black 1px;
 			width: 50%;
 			height: 150px;
 		}
 	#defenseInventory{
 			float: left;
-			background-color: purple;
+			border: solid black 1px;
 			width: 50%;
 			height: 150px;
 		}
 }
 
 #attackStats{
-	background-color:yellow;
+	border: solid black 1px;
 }
 
 #defenseStats{
-	background-color:orange;
+	border: solid black 1px;
 }
-
 /* Misc. */
 .spacer{
 	margin: 0 auto;

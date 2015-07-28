@@ -1,4 +1,4 @@
-angular.module('Champion', []).controller('ChampionCtrl', function($scope, $http){
+angular.module('Champion', []).controller('ChampionCtrl', function($scope, $http) {
 	var key = "40c0236b-48f3-4f53-93e5-4966062c87e7"; 
 	var api_version = "1.2";
 	var region = "na";
@@ -6,6 +6,14 @@ angular.module('Champion', []).controller('ChampionCtrl', function($scope, $http
 	var dd_version = "5.14.1";
 	$http.get("https://global.api.pvp.net/api/lol/static-data/na/v1.2/versions?api_key=40c0236b-48f3-4f53-93e5-4966062c87e7").success(function(data){
 		dd_version = data[0];
+	});
+	var itemUrl = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/item?itemListData=all&api_key=40c0236b-48f3-4f53-93e5-4966062c87e7";
+	$scope.items = [];
+	$http.get(itemUrl).success(function(data){
+		for (var i in data["data"]) {
+			data["data"][i]["image_url"] = "http://ddragon.leagueoflegends.com/cdn/"+dd_version+"/img/item/" + data["data"][i]["image"]["full"];
+			$scope.items.push(data["data"][i]);
+		};	
 	});
 	$scope.champions = [];
 	$http.get(url).success(function(data){
@@ -22,16 +30,5 @@ angular.module('Champion', []).controller('ChampionCtrl', function($scope, $http
 	$scope.defendChampion = null;
 	$scope.setDefendChampion = function(champion) {
 		$scope.defendChampion = champion;
-	};
-
-	$scope.tagFilter = function (champion) {
-		for (var i in $scope.checked_tags) {
-			for (var j in champion.tags) {
-				if (i === j) {
-					return true;
-				}
-			}	
-		}
-    	return false;
 	};
 });

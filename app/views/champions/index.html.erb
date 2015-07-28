@@ -1,6 +1,7 @@
 <div ng-controller="ChampionCtrl">
 	<%= render :partial => "attack_champion_modal"%>
 	<%= render :partial => "defend_champion_modal"%>
+	<%= render :partial => "attack_champion_inventory"%>
 	<!-- Item Box -->
 	<div id="fullWrap">
 		<!-- Attack Side -->
@@ -38,7 +39,7 @@
 
 			<!-- Attack Inventory -->
 			<div>
-				<h4 class="spacer" id="attackInventory">Attack Inventory (will act as a button to a popup window)</h4>
+				<h4 class="spacer" id="attackInventory" data-toggle="modal" data-target="#attackChampionInventory">Attack Inventory (will act as a button to a popup window)</h4>
 			</div>
 
 			<!-- Defense Inventory -->
