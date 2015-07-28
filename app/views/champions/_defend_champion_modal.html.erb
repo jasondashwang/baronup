@@ -1,0 +1,21 @@
+<!-- Defense Champion Select Modal -->
+<div class="modal fade" id="defendChampionModal" tabindex="-1" role="dialog" aria-labelledby="defendChampionModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <input class="modal-title" id="defendChampionModalLabel" type="text" ng-model="query">
+      </div>
+      <div class="modal-body user_champion_select">
+		<ul>
+			<li ng-repeat="champion in champions | filter: query" ng-click="setDefendChampion(champion)" ng-attr-title="{{champion.name}}">
+				<img ng-attr-src="{{champion.image_url}}" class="hvr-float" data-dismiss="modal">
+			</li>
+		</ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

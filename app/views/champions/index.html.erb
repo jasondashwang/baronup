@@ -1,46 +1,6 @@
 <div ng-controller="ChampionCtrl">
-	<!-- Attack Champion Select Modal -->
-	<div class="modal fade" id="attackChampionModal" tabindex="-1" role="dialog" aria-labelledby="attackChampionModalLabel">
-	  <div class="modal-dialog modal-lg" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <input class="modal-title" id="attackChampionModalLabel" type="text" ng-model="query">
-	      </div>
-	      <div class="modal-body user_champion_select">
-			<ul>
-				<li ng-repeat="champion in champions | filter: query" ng-click="setAttackChampion(champion)" ng-attr-title="{{champion.name}}">
-					<img ng-attr-src="{{champion.image_url}}" class="hvr-float" data-dismiss="modal">
-				</li>
-			</ul>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-	<!-- Defense Champion Select Modal -->
-	<div class="modal fade" id="defendChampionModal" tabindex="-1" role="dialog" aria-labelledby="defendChampionModalLabel">
-	  <div class="modal-dialog modal-lg" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <input class="modal-title" id="defendChampionModalLabel" type="text" ng-model="query">
-	      </div>
-	      <div class="modal-body user_champion_select">
-			<ul>
-				<li ng-repeat="champion in champions | filter: query" ng-click="setDefendChampion(champion)" ng-attr-title="{{champion.name}}">
-					<img ng-attr-src="{{champion.image_url}}" class="hvr-float" data-dismiss="modal">
-				</li>
-			</ul>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+	<%= render :partial => "attack_champion_modal"%>
+	<%= render :partial => "defend_champion_modal"%>
 	<!-- Item Box -->
 	<div id="fullWrap">
 		<!-- Attack Side -->
@@ -90,5 +50,76 @@
 				<h4 class="spacer">Attack Stats</h4>
 			</div>
 		</div>
+	</div>
+</div>
+<div ng-controller="ChampionCtrl">
+	<!-- Item Box -->
+	<div id="fullWrap">
+		<!-- Attack Side -->
+		<div class="attackSide">
+			<!-- Champion Select -->
+			<div class="championSelect">
+				<h4 class="spacer">Champion Select</h4>
+			</div>
+			<!-- Level Slider -->
+			<div class="levelSelector">
+				<h4 class="spacer">Level Slider</h4>
+			</div>
+			<!-- Runes Button -->
+			<button type="button" class="btn btn-primary btn-lg">
+				Runes
+			</button>
+			<!-- Masteries Button -->
+			<button type="button" class="btn btn-primary btn-lg">
+				Masteries
+			</button>
+			<!-- Stat Table -->
+		</div>
+
+		<!-- Center -->
+		<div class="centerPiece">
+			<!-- Attack Stats -->
+			<div class="stats" id="attackStats">
+				<h4 class="spacer">Attack Stats</h4>
+			</div>
+
+			<!-- Defense Stats -->
+			<div class="stats" id="defenseStats">
+				<h4 class="spacer">Defense Stats</h4>
+			</div>
+
+			<!-- Attack Inventory -->
+			<div>
+				<h4 class="spacer" id="attackInventory">Attack Inventory (will act as a button to a popup window)</h4>
+			</div>
+
+			<!-- Defense Inventory -->
+			<div>
+				<h4 class="spacer" id="defenseInventory">Defense Inventory (will act as a button to a popup window)</h4>
+			</div>
+		</div>
+
+		<!-- Defense Side -->
+		<div class="defenseSide">
+			<!-- Champion Select -->
+			<div class="championSelect">
+				<h4 class="spacer">Champion Select</h4>
+			</div>
+			<!-- Level Slider -->
+			<div class="levelSelector">
+				<h4 class="spacer">Level Slider</h4>
+			</div>
+
+			<!-- Rune Button -->
+			<button type="button" class="btn btn-primary btn-lg">
+				Runes
+			</button>
+
+			<!-- Masteries Button -->
+			<button type="button" class="btn btn-primary btn-lg">
+				Masteries
+			</button>
+		</div>
+
 	</div>
 </div>
