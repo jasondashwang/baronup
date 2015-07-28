@@ -1,0 +1,100 @@
+<div ng-controller="ChampionCtrl">
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+	  Launch demo modal
+	</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <input class="modal-title" id="myModalLabel" type="text" ng-model="query">
+	      </div>
+	      <div class="modal-body user_champion_select">
+	        {{userChampion.name}}
+			<ul>
+				<li ng-repeat="champion in champions | filter: query" ng-click="setCurrentChampion(champion)" ng-attr-title="{{champion.name}}">
+					<img ng-attr-src="{{champion.image_url}}" class="hvr-float">
+				</li>
+			</ul>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+</div>
+
+<!-- Item Box -->
+
+<div id="fullWrap">
+	<!-- Attack Side -->
+	<div class="attackSide">
+		<!-- Champion Select -->
+		<div class="championSelect">
+			<h4 class="spacer">Champion Select</h4>
+		</div>
+		<!-- Level Slider -->
+		<div class="levelSelector">
+			<h4 class="spacer">Level Slider</h4>
+		</div>
+		<!-- Runes Button -->
+		<button type="button" class="btn btn-primary btn-lg">
+			Runes
+		</button>
+		<!-- Masteries Button -->
+		<button type="button" class="btn btn-primary btn-lg">
+			Masteries
+		</button>
+		<!-- Stat Table -->
+	</div>
+
+	<!-- Center -->
+	<div class="centerPiece">
+		<!-- Attack Stats -->
+		<div class="stats" id="attackStats">
+			<h4 class="spacer">Attack Stats</h4>
+		</div>
+
+		<!-- Defense Stats -->
+		<div class="stats" id="defenseStats">
+			<h4 class="spacer">Defense Stats</h4>
+		</div>
+
+		<!-- Attack Inventory -->
+		<div>
+			<h4 class="spacer" id="attackInventory">Attack Inventory (will act as a button to a popup window)</h4>
+		</div>
+
+		<!-- Defense Inventory -->
+		<div>
+			<h4 class="spacer" id="defenseInventory">Defense Inventory (will act as a button to a popup window)</h4>
+		</div>
+	</div>
+
+	<!-- Defense Side -->
+	<div class="defenseSide">
+		<!-- Champion Select -->
+		<div class="championSelect">
+			<h4 class="spacer">Champion Select</h4>
+		</div>
+		<!-- Level Slider -->
+		<div class="levelSelector">
+			<h4 class="spacer">Level Slider</h4>
+		</div>
+
+		<!-- Rune Button -->
+		<button type="button" class="btn btn-primary btn-lg">
+			Runes
+		</button>
+
+		<!-- Masteries Button -->
+		<button type="button" class="btn btn-primary btn-lg">
+			Masteries
+		</button>
+	</div>
+
+</div>
