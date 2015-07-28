@@ -9,7 +9,7 @@
       <div class="modal-body user_champion_select">
 		<ul>
 			<li ng-repeat="champion in champions | filter: query" ng-click="setDefendChampion(champion)" ng-attr-title="{{champion.name}}">
-				<img ng-attr-src="{{champion.image_url}}" class="hvr-float" data-dismiss="modal">
+				<img ng-attr-src="{{champion.image_url}}" class="hvr-grow" data-dismiss="modal">
 			</li>
 		</ul>
       </div>
