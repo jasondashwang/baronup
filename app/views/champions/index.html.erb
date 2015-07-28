@@ -1,8 +1,4 @@
 <div ng-controller="ChampionCtrl">
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-	  Launch demo modal
-	</button>
-
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog modal-lg" role="document">
@@ -12,7 +8,6 @@
 	        <input class="modal-title" id="myModalLabel" type="text" ng-model="query">
 	      </div>
 	      <div class="modal-body user_champion_select">
-	        {{userChampion.name}}
 			<ul>
 				<li ng-repeat="champion in champions | filter: query" ng-click="setCurrentChampion(champion)" ng-attr-title="{{champion.name}}">
 					<img ng-attr-src="{{champion.image_url}}" class="hvr-float">
@@ -25,57 +20,54 @@
 	    </div>
 	  </div>
 	</div>
-
-</div>
-
-<!-- Item Box -->
-
-<div id="fullWrap">
-	<!-- Attack Side -->
-	<div class="attackSide">
-		<!-- Champion Select -->
-		<div class="championSelect">
-			<h4 class="spacer">Champion Select</h4>
-		</div>
-		<!-- Level Slider -->
-		<div class="levelSelector">
-			<h4 class="spacer">Level Slider</h4>
-		</div>
-		<!-- Stat Table -->
-		<div class="stats">
-			<h4 class="spacer">Attack Stats</h4>
-		</div>
-	</div>
-
-	<!-- Center -->
-	<div class="centerPiece">
-		<div id="itemBox"> <!-- Each Item Picture should be 55px -->
-			<h4 class="spacer">Items go here (55px per Item box)</h4>
-		</div>
-
-		<div id="inventories">
-			<div id="attackInventory">
-				<h4 class="spacer">Attack Inventory</h4>
+	<!-- Item Box -->
+	<div id="fullWrap">
+		<!-- Attack Side -->
+		<div class="attackSide">
+			<!-- Champion Select -->
+			<div class="championSelect" data-toggle="modal" data-target="#myModal">
+				<img ng-attr-src="{{userChampion.image_url}}" ng-if="userChampion">
 			</div>
-			<div id="defenseInventory">
-				<h4 class="spacer">Defense Inventory</h4>
+			<!-- Level Slider -->
+			<div class="levelSelector">
+				<h4 class="spacer">Level Slider</h4>
+			</div>
+			<!-- Stat Table -->
+			<div class="stats">
+				<h4 class="spacer">Attack Stats</h4>
 			</div>
 		</div>
-	</div>
 
-	<!-- Defense Side -->
-	<div class="defenseSide">
-		<!-- Champion Select -->
-		<div class="championSelect">
-			<h4 class="spacer">Champion Select</h4>
+		<!-- Center -->
+		<div class="centerPiece">
+			<div id="itemBox"> <!-- Each Item Picture should be 55px -->
+				<h4 class="spacer">Items go here (55px per Item box)</h4>
+			</div>
+
+			<div id="inventories">
+				<div id="attackInventory">
+					<h4 class="spacer">Attack Inventory</h4>
+				</div>
+				<div id="defenseInventory">
+					<h4 class="spacer">Defense Inventory</h4>
+				</div>
+			</div>
 		</div>
-		<!-- Level Slider -->
-		<div class="levelSelector">
-			<h4 class="spacer">Level Slider</h4>
-		</div>
-		<!-- Stat Table -->
-		<div class="stats">
-			<h4 class="spacer">Attack Stats</h4>
+
+		<!-- Defense Side -->
+		<div class="defenseSide">
+			<!-- Champion Select -->
+			<div class="championSelect">
+				<h4 class="spacer">Champion Select</h4>
+			</div>
+			<!-- Level Slider -->
+			<div class="levelSelector">
+				<h4 class="spacer">Level Slider</h4>
+			</div>
+			<!-- Stat Table -->
+			<div class="stats">
+				<h4 class="spacer">Attack Stats</h4>
+			</div>
 		</div>
 	</div>
 </div>
