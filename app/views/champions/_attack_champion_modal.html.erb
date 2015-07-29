@@ -8,8 +8,8 @@
       </div>
       <div class="modal-body user_champion_select">
 		<ul>
-			<li ng-repeat="champion in champions | filter: query" ng-click="setAttackChampion(champion)" ng-attr-title="{{champion.name}}">
-				<img ng-attr-src="{{champion.image_url}}" class="hvr-grow" data-dismiss="modal">
+			<li ng-repeat="champion in champions | filter: query" ng-click="setAttackChampion(champion)">
+				<img ng-attr-src="{{champion.image_url}}" class="hvr-grow" data-dismiss="modal" data-toggle="tooltip" data-placement="right" title="{{champion.name}}">
 			</li>
 		</ul>
       </div>
