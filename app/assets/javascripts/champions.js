@@ -15,13 +15,20 @@ angular.module('Champion', []).controller('ChampionCtrl', function($scope, $http
 			$scope.items.push(data["data"][i]);
 		};	
 	});
-	$scope.champions = [];
+	$scope.champions;
+	var championArray = [];
 	$http.get(url).success(function(data){
 		for (var i in data["data"]) {
 			data["data"][i]["image_url"] = "http://ddragon.leagueoflegends.com/cdn/"+dd_version+"/img/champion/" + data["data"][i]["image"]["full"];
 			data["data"][i]["profile_image_url"] = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/"+i+"_"+data["data"][i]["skins"][0]["num"]+".jpg";
-			$scope.champions.push(data["data"][i]);
-		};	
+			data["data"][i]["stats"]["criticaldamage"] = 200;
+			data["data"][i]["stats"]["cooldownreduction"] = 0;
+			data["data"][i]["stats"]["spellvamp"] = 0;
+			data["data"][i]["stats"]["lifesteal"] = 0;
+			data["data"][i]["stats"]["attackspeed"] = 40;
+			championArray.push(data["data"][i]);
+		};
+		$scope.champions = championArray;	
 	});
 	$scope.attackChampion = null;
 	$scope.setAttackChampion = function(champion) {

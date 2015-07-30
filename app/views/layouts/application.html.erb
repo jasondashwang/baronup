@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html ng-app="Champion">
-<head>
-  <title>BaronUp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= favicon_link_tag 'favicon.ico' %>
-  <script type="text/javascript">
-    $(document).on("ready page:change", function() {
-      $("[data-toggle='tooltip']").tooltip();
-    });
-  </script>
-</head>
-<body>
-<div class="container">
-<%= yield %>
-</div>
-</body>
+<html lang="en" ng-app="Champion">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BaronUp</title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+  <body>
+    <%=render :partial => "layouts/navbar"%>
+    <div class="container-fluid" ng-controller="ChampionCtrl"><%= yield %></div>
+  </body>
 </html>

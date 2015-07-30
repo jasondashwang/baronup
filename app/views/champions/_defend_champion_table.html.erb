@@ -1,52 +1,39 @@
-<table class="stats" border="1">
+<table class="table table-condensed table-bordered">
+	<thead>
+		<tr><th colspan="4">Defending Champion Stats</th></tr>
+	</thead>
 	<tbody>
 		<tr>
-			<td class="wordstats">HP5</td>
-			<td class="numberstats" id="OppHPRegen"></td>
-			<td class="wordstats">MP5</td>
-			<td class="numberstats" id="OppManaRegen"></td>
+			<td class="wordstats">HP5</td><td class="numberstats" id="OppHPRegen">{{defendChampion.stats.hpregen | number: 3}}</td>
+			<td class="wordstats">MP5</td><td class="numberstats" id="OppManaRegen">{{defendChampion.stats.mpregen | number: 3}}</td>
 		</tr>
 		<tr>
-			<td class="wordstats">Attack Dmg.</td>
-			<td class="numberstats" id="OppAttackDamage"></td>
-			<td class="wordstats">Ability Power</td>
-			<td class="numberstats" id="OppAbilityPower"></td>
+			<td class="wordstats">Attack Dmg.</td><td class="numberstats" id="OppAttackDamage">{{defendChampion.stats.attackdamage | number: 3}}</td>
+			<td class="wordstats">Ability Power</td><td class="numberstats" id="OppAbilityPower">{{0 | number: 3}}</td>
 		</tr>
 		<tr>
-			<td class="wordstats">Armor Pen</td>
-			<td id="OppArmorPenetration">0 | 0%</td>
-			<td class="wordstats">Magic Pen</td>
-			<td class="numberstats" id="OppMagicPenetration">0 | 0%</td>
+			<td class="wordstats">Armor Pen</td><td id="OppArmorPenetration">{{0 | number: 3}}</td>
+			<td class="wordstats">Magic Pen</td><td class="numberstats" id="OppMagicPenetration">{{0 | number: 3}}</td>
 		</tr>
 		<tr>
-			<td class="wordstats">Life Steal</td>
-			<td class="numberstats" id="OppLifeSteal"></td>
-			<td class="wordstats">Spell Vamp</td>
-			<td class="numberstats" id="OppSpellVamp"></td>
+			<td class="wordstats">Life Steal</td><td class="numberstats" id="OppLifeSteal">{{defendChampion.stats.lifesteal | number: 3}}</td>
+			<td class="wordstats">Spell Vamp</td><td class="numberstats" id="OppSpellVamp">{{defendChampion.stats.spellvamp | number: 3}}</td>
 		</tr>
 		<tr>
-			<td class="wordstats">Attack Spd.</td>
-			<td class="numberstats" id="OppAttackSpeed"></td>
-			<td class="wordstats">CDR</td>
-			<td class="numberstats" id="OppCooldownReduction"></td>
+			<td class="wordstats">Attack Spd.</td><td class="numberstats" id="OppAttackSpeed">{{defendChampion.stats.attackspeed | number: 3}}</td>
+			<td class="wordstats">CDR</td><td class="numberstats" id="OppCooldownReduction">{{defendChampion.stats.cooldownreduction | number: 3}}</td>
 		</tr>
 		<tr>
-			<td class="wordstats">Crit Chance</td>
-			<td class="numberstats" id="OppCriticalChance"></td>
-			<td class="wordstats">Armor</td>
-			<td class="numberstats" id="OppArmor"></td>
+			<td class="wordstats">Crit Chance</td><td class="numberstats" id="OppCriticalChance">{{defendChampion.stats.crit | number: 3}}</td>
+			<td class="wordstats">Armor</td><td class="numberstats" id="OppArmor">{{defendChampion.stats.armor | number: 3}}</td>
 		</tr>
 		<tr>
-			<td class="wordstats">Crit Damage</td>
-			<td class="numberstats" id="OppCriticalDamage"></td>
-			<td class="wordstats">Magic Resist</td>
-			<td class="numberstats" id="OppMagicResist"></td>
+			<td class="wordstats">Crit Damage</td><td class="numberstats" id="OppCriticalDamage">{{defendChampion.stats.criticaldamage | number: 3}}</td>
+			<td class="wordstats">Magic Resist</td><td class="numberstats" id="OppMagicResist">{{defendChampion.stats.spellblock | number: 3}}</td>
 		</tr>
 		<tr>
-			<td class="wordstats">Range</td>
-			<td class="numberstats" id="OppRange"></td>
-			<td class="wordstats">Movement</td>
-			<td class="numberstats" id="OppMovementSpeed"></td>
+			<td class="wordstats">Range</td><td class="numberstats" id="OppRange">{{defendChampion.stats.attackrange | number: 3}}</td>
+			<td class="wordstats">Movement</td><td class="numberstats" id="OppMovementSpeed">{{defendChampion.stats.movespeed | number: 3}}</td>
 		</tr>
 	</tbody>
 </table>

@@ -1,16 +1,25 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-/*
- *= require jquery-ui
-*/
+@import "foundation_and_overrides";
 
-.inventory {
-	ul {
-		list-style-type: none;
-		li {
-			display: block;
-			float: left;
-		}
+nav {
+	margin-bottom: 10px;
+	a:hover {
+		text-decoration: none;
+	}
+	a:active {
+		text-decoration: none;
+	}
+	a:link {
+	    color: green;
+	}
+	a:visited {
+	    color: green;
+	}
+}
+body {
+	.top-bar {
+		margin-bottom: 10px;
 	}
 }
 .user_champion_select {
@@ -19,6 +28,7 @@
 		li {
 			display: block;
 			float: left;
+
 			img {
 				width: 80px;
 				height: 80px;
@@ -31,9 +41,11 @@
 	height: 450px;
 }
 .modal-header {
-
 	input {
 		height: 100%;
+		width: 95%;
+		border-radius: 10px;
+		margin: 0 0 0 0; 
 	}
 }
 .hvr-grow {
@@ -56,54 +68,86 @@
 }
 
 table {
+	width: 100%;
 	tr {
-		max-height: 30px;
+		th {
+			text-align: center;
+		}
+		height: 50px;
 		.wordstats {
-			min-width: 85px;
+			width: 32%;
 		}
 		.numberstats {
-			min-width: 52px;
-		}
-		td {
-			text-align: center;
+			width: 18%;
 		}
 	}
 }
 
 
 /* Wireframe */
-#fullWrap {
-	width: 1000px;
-	height: 1000px;
-	margin: 0 auto;
-}
-
 .attackSide, .defenseSide{
-	float: left;
+	display: block;
+	margin: 0 auto;
 	height: 100%;
-	width: 225px;
+	width: 231px;
 	.championSelect {
-		width: 225px;
-		height: 400px;
+		position: relative;
+		width: 231px;
+		height: 420px;
+		margin-bottom: 15px;
+		.championOverlay {
+			width: 231px;
+			height: 105px;
+			position: absolute;
+			bottom: 0;
+			background-color: rgba(0,0,0,0.5);
+			color: white;
+			text-align: center;
+			padding: 5px;
+			.progress {
+				color: black;
+			    height: 1.5625rem;
+			    margin-bottom: 0.625rem;
+			    overflow: hidden;
+			    height: 20px;
+			    margin-bottom: 10px;
+			    border-radius: 4px;
+			    border-top-left-radius: 4px;
+			    border-top-right-radius: 4px;
+			    border-bottom-right-radius: 4px;
+			    border-bottom-left-radius: 4px;
+			    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+			    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+			    background-color: none;
+			    border: none;
+			    padding: 0;
+			}
+		}
 		.loadingImage {
-			width: 225px;
-			height: 400px;
+			background-image: url("https://dailypop.files.wordpress.com/2012/09/dr_who_7_01_low.jpg?w=231&h=420");
+			background-repeat: no-repeat;
+			width: 231px;
+			height: 420px;
 		}
 	}
 	.levelSelector {
-		width: 100%;
-		height: 50px;
-		border: solid black 1px;
+		width: 231px;
+		height: 60px;
+
+		.levelRangeSliderContainer {
+			
+		}
+		.levelOutputContainer {
+		margin-top: 16px;
+		}
 	}
 	.btn {
-		width: 225px;
+		width: 231px;
 		margin-top: 5px;
 	}
 }
 
 .centerPiece{
-	float: left;
-	width: 550px;
 	height: 100%;
 	.stats{
 		float: left;
@@ -111,25 +155,45 @@ table {
 		height: 450px;
 	}
 	#attackInventory{
-			float: left;
-			border: solid black 1px;
-			width: 50%;
-			height: 150px;
-		}
+		float: left;
+		border: solid black 1px;
+		width: 50%;
+		height: 150px;
+	}
 	#defenseInventory{
-			float: left;
-			border: solid black 1px;
-			width: 50%;
-			height: 150px;
+		float: right;
+		border: solid black 1px;
+		width: 50%;
+		height: 150px;
+	}
+
+}
+#defendChampionInventory, #attackChampionInventory {
+	.itemsContainer {
+		width: 50%;
+		float: left;
+		display: block;
+		ul {
+			list-style-type: none;
+			li {
+				display: block;
+				float: left;
+				img {
+					width: 50px;
+					height: 50px;
+				}
+			}
 		}
+	}
+	.inventoryContainer {
+		width: 50%;
+		float: left;
+		display: block;
+	}
 }
-
-#attackStats{
-	border: solid black 1px;
-}
-
-#defenseStats{
-	border: solid black 1px;
+.masteryPage {
+	width: 295;
+	height: 197.5
 }
 /* Misc. */
 .spacer{

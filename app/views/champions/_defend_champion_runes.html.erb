@@ -1,0 +1,21 @@
+<!-- Defense Champion Runes Modal -->
+<div class="modal fade" id="defendChampionModal" tabindex="-1" role="dialog" aria-labelledby="defendChampionModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <input class="modal-title" id="defendChampionModalLabel" type="text" ng-model="query" placeholder="Champion Search">
+      </div>
+      <div class="modal-body user_champion_select">
+    		<ul>
+    			<li ng-repeat="champion in champions | filter: query | orderBy:'name'" ng-click="setDefendChampion(champion)">
+    				<img ng-attr-src="{{champion.image_url}}" class="hvr-grow" data-dismiss="modal" data-toggle="tooltip" data-placement="right" title="{{champion.name}}">
+    			</li>
+    		</ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

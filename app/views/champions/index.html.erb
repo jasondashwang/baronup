@@ -1,34 +1,58 @@
-<div ng-controller="ChampionCtrl">
+<div>
 	<%= render :partial => "attack_champion_modal"%>
 	<%= render :partial => "defend_champion_modal"%>
 	<%= render :partial => "attack_champion_inventory"%>
+	<%= render :partial => "defend_champion_inventory"%>
 	<!-- Item Box -->
 	<div id="fullWrap">
 		<!-- Attack Side -->
-		<div class="attackSide">
-			<!-- Champion Select -->
-			<div class="championSelect" data-toggle="modal" data-target="#attackChampionModal">
-				<img ng-attr-src="{{attackChampion.profile_image_url}}" ng-if="attackChampion" class="loadingImage img-rounded">
+		<div class="col-md-3">
+			<div class="attackSide">
+				<!-- Champion Select -->
+				<div class="championSelect" data-toggle="modal" data-target="#attackChampionModal">
+					<img ng-attr-src="{{attackChampion.profile_image_url}}" class="loadingImage img-rounded">
+					<span class="championOverlay img-rounded">
+						<div ng-switch="attackChampion === null">
+							<b ng-switch-when="true">Pick Attacking Champion</b>
+							<b ng-switch-default>{{attackChampion.name}}</b>
+						</div>
+						<div class="progress large success radius">
+						  <span class="meter"><b>Health: {{attackChampion.stats.hp}}</b></span>
+						</div>
+						<div class="progress large radius">
+						  <span class="meter"><b>Mana: {{attackChampion.stats.mp}}</b></span>
+						</div>
+					</span>
+				</div>
+				<!-- Level Slider -->
+				<div class="levelSelector">
+					<div class="row">
+					  	<div class="levelRangeSliderContainer col-md-10">
+					    	<div class="range-slider" data-slider data-options="start: 1; end: 18;display_selector: #attackChampionLevel;">
+						      	<span class="range-slider-handle" role="slider" tabindex="0"></span>
+						     	<span class="range-slider-active-segment"></span>
+					    	</div>
+					  	</div>
+					  	<div class="levelOutputContainer col-md-2">
+					    	<span id="attackChampionLevel"></span>
+					  	</div>
+					</div>
+				</div>
+				<!-- Runes Button -->
+				<button type="button" class="btn btn-primary btn-lg">
+					Runes
+				</button>
+				<!-- Masteries Button -->
+				<button type="button" class="btn btn-primary btn-lg">
+					Masteries
+				</button>
+				<!-- Stat Table -->
 			</div>
-			<!-- Level Slider -->
-			<div class="levelSelector">
-				<h4 class="spacer">Level Slider</h4>
-			</div>
-			<!-- Runes Button -->
-			<button type="button" class="btn btn-primary btn-lg">
-				Runes
-			</button>
-			<!-- Masteries Button -->
-			<button type="button" class="btn btn-primary btn-lg">
-				Masteries
-			</button>
-			<!-- Stat Table -->
 		</div>
-
 		<!-- Center -->
-		<div class="centerPiece">
+		<div class="centerPiece col-md-6">
 			<!-- Attack Stats -->
-			<div class="stats" id="attackStats" style="overflow: scroll;">
+			<div class="stats" id="attackStats">
 				<%=render :partial => "attack_champion_table"%>
 			</div>
 
@@ -44,31 +68,53 @@
 
 			<!-- Defense Inventory -->
 			<div>
-				<h4 class="spacer" id="defenseInventory">Defense Inventory (will act as a button to a popup window)</h4>
+				<h4 class="spacer" id="defenseInventory" data-toggle="modal" data-target="#defendChampionInventory">Defense Inventory (will act as a button to a popup window)</h4>
 			</div>
 		</div>
-
 		<!-- Defense Side -->
-		<div class="defenseSide">
-			<!-- Champion Select -->
-			<div class="championSelect" data-toggle="modal" data-target="#defendChampionModal">
-				<img ng-attr-src="{{defendChampion.profile_image_url}}" ng-if="defendChampion" class="loadingImage img-rounded">
-			</div>
-			<!-- Level Slider -->
-			<div class="levelSelector">
-				<h4 class="spacer">Level Slider</h4>
-			</div>
+		<div class="col-md-3">
+			<div class="defenseSide">
+				<!-- Champion Select -->
+				<div class="championSelect" data-toggle="modal" data-target="#defendChampionModal">
+					<img ng-attr-src="{{defendChampion.profile_image_url}}" class="loadingImage img-rounded">
+					<span class="championOverlay img-rounded">
+						<div ng-switch="defendChampion === null">
+							<b ng-switch-when="true">Pick Defending Champion</b>
+							<b ng-switch-default>{{defendChampion.name}}</b>
+						</div>
+						<div class="progress large success radius">
+						  <span class="meter"><b>Health: {{defendChampion.stats.hp}}</b></span>
+						</div>
+						<div class="progress large radius">
+						  <span class="meter"><b>Mana: {{defendChampion.stats.mp}}</b></span>
+						</div>
+					</span>
+				</div>
+				<!-- Level Slider -->
+				<div class="levelSelector">
+					<div class="row">
+					  	<div class="levelRangeSliderContainer col-md-10">
+					    	<div class="range-slider" data-slider data-options="start: 1; end: 18;display_selector: #defendChampionLevel;">
+						      	<span class="range-slider-handle" role="slider" tabindex="0"></span>
+						     	<span class="range-slider-active-segment"></span>
+					    	</div>
+					  	</div>
+					  	<div class="levelOutputContainer col-md-2">
+					    	<span id="defendChampionLevel"></span>
+					  	</div>
+					</div>
+				</div>
 
-			<!-- Rune Button -->
-			<button type="button" class="btn btn-primary btn-lg">
-				Runes
-			</button>
+				<!-- Rune Button -->
+				<button type="button" class="btn btn-primary btn-lg">
+					Runes
+				</button>
 
-			<!-- Masteries Button -->
-			<button type="button" class="btn btn-primary btn-lg">
-				Masteries
-			</button>
+				<!-- Masteries Button -->
+				<button type="button" class="btn btn-primary btn-lg">
+					Masteries
+				</button>
+			</div>
 		</div>
-
 	</div>
 </div>

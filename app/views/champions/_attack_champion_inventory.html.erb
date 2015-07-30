@@ -7,12 +7,33 @@
         <input class="modal-title" id="attackChampionModalLabel" type="text" ng-model="itemQuery">
       </div>
       <div class="modal-body">
-        <div class="inventory">
-    		<ul>
-    			<li ng-repeat="item in items | filter: itemQuery">
-    				<img ng-attr-src="{{item.image_url}}" class="hvr-grow" data-dismiss="modal">
-    			</li>
-    		</ul>
+        <div class="attackChampionInventoryContainer inventoryContainer">
+          <table class="inventory" border="1">
+            <tbody>
+              <tr>
+                <td><div class="droppable ui-droppable"></div></td>
+                <td><div class="droppable ui-droppable"></div></td>
+                <td><div class="droppable ui-droppable"></div></td>
+              </tr>
+              <tr>
+                <td><div class="droppable ui-droppable"></div></td>
+                <td><div class="droppable ui-droppable"></div></td>
+                <td><div class="droppable ui-droppable"></div></td>
+              </tr>
+              <tr>
+                <td class="dragon"></td>
+                <td><div class="droppable ui-droppable"></div></td>
+                <td class="baron"></td>
+              </tr>
+            </tbody>
+          </table>  
+        </div>
+        <div class="itemsContainer">
+          <ul>
+            <li ng-repeat="item in items | filter: itemQuery">
+              <img ng-attr-src="{{item.image_url}}" class="hvr-grow">
+            </li>
+          </ul>  
         </div>
       </div>
       <div class="modal-footer">
