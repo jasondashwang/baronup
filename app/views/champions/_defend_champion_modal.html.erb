@@ -16,8 +16,8 @@
       </div>
       <div class="modal-body user_champion_select">
 		<ul>
-			<li ng-repeat="champion in champions | filter: query | orderBy:'name'" ng-click="setDefendChampion(champion)">
-				<img ng-attr-src="{{champion.image_url}}" class="hvr-grow" data-dismiss="modal" data-toggle="tooltip" data-placement="right" title="{{champion.name}}">
+			<li ng-repeat="champion in champions | filter: query | orderBy:'name'">
+				<img ng-attr-src="{{champion.image_url}}" class="hvr-grow" data-dismiss="modal" title="{{champion.name}}" ng-click="setDefendChampion(champion)">
 			</li>
 		</ul>
       </div>

@@ -34,13 +34,23 @@ app.controller('ChampionCtrl', function($scope, $http) {
 	$scope.attackChampion = null;
 	$scope.setAttackChampion = function(champion) {
 		$scope.attackChampion = champion;
+		$scope.attackChampion.level = 1;
+		$scope.attackChampion.runes = [];
+		$scope.attackChampion.masteries = [];
+		$scope.attackChampion.items = [];
 	};
 	$scope.defendChampion = null;
 	$scope.setDefendChampion = function(champion) {
 		$scope.defendChampion = champion;
+		$scope.defendChampion.level = 1;
+		$scope.defendChampion.runes = [];
+		$scope.defendChampion.masteries = [];
+		$scope.defendChampion.items = [];
+	};
+	$scope.updateChampion = function(champion) {
+		
 	};
 });
-$('.draggable').draggable();
 // var app.filter('championFilter', function() {
 // 	return function(champions, types) {
 // 		var filtered = [];
