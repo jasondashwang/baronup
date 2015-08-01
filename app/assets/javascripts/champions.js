@@ -1,4 +1,5 @@
-angular.module('Champion', []).controller('ChampionCtrl', function($scope, $http) {
+var app = angular.module('Champion', []);
+app.controller('ChampionCtrl', function($scope, $http) {
 	var key = "40c0236b-48f3-4f53-93e5-4966062c87e7"; 
 	var api_version = "1.2";
 	var region = "na";
@@ -39,3 +40,17 @@ angular.module('Champion', []).controller('ChampionCtrl', function($scope, $http
 		$scope.defendChampion = champion;
 	};
 });
+$('.draggable').draggable();
+// var app.filter('championFilter', function() {
+// 	return function(champions, types) {
+// 		var filtered = [];
+// 		angular.each(champions, function() {
+// 			if (types.Assassin) {}
+// 			if () {}
+// 			if () {}
+// 			if () {}
+// 			if () {}
+// 			if () {}
+// 		});
+// 	}
+// });

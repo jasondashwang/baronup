@@ -1,3 +1,6 @@
+/*
+ *= require jquery-ui
+ */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "foundation_and_overrides";
@@ -40,12 +43,17 @@ body {
 	overflow: scroll;
 	height: 450px;
 }
-.modal-header {
-	input {
+body .modal-header {
+	padding-bottom: 0;
+	.modal-title {
 		height: 100%;
 		width: 95%;
 		border-radius: 10px;
 		margin: 0 0 0 0; 
+	}
+	div {
+		padding: 5px;
+		
 	}
 }
 .hvr-grow {
@@ -194,6 +202,9 @@ table {
 .masteryPage {
 	width: 295;
 	height: 197.5
+}
+.inventory {
+	margin-top: 10px;
 }
 /* Misc. */
 .spacer{

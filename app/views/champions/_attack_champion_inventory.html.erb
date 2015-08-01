@@ -1,4 +1,6 @@
 <!-- Attack Champion Inventory Modal -->
+<script type="text/javascript">
+</script>
 <div class="modal fade" id="attackChampionInventory" tabindex="-1" role="dialog" aria-labelledby="attackChampionModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -31,7 +33,7 @@
         <div class="itemsContainer">
           <ul>
             <li ng-repeat="item in items | filter: itemQuery">
-              <img ng-attr-src="{{item.image_url}}" class="hvr-grow">
+              <img ng-attr-src="{{item.image_url}}" class="hvr-grow draggable ui-draggable">
             </li>
           </ul>  
         </div>

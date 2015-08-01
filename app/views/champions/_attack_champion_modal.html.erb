@@ -5,13 +5,21 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <input class="modal-title" id="attackChampionModalLabel" type="text" ng-model="query" placeholder="Champion Search">
+        <div>
+          <input type="checkbox" name="championType" ng-model="champSearch.Assassin"> Assassin
+          <input type="checkbox" name="championType" ng-model="champSearch.Fighter"> Fighter
+          <input type="checkbox" name="championType" ng-model="champSearch.Mage"> Mage
+          <input type="checkbox" name="championType" ng-model="champSearch.Marksman"> Marksman
+          <input type="checkbox" name="championType" ng-model="champSearch.Support"> Support
+          <input type="checkbox" name="championType" ng-model="champSearch.Tank"> Tank
+        </div>
       </div>
       <div class="modal-body user_champion_select">
-		<ul>
-			<li ng-repeat="champion in champions | filter: query | orderBy:'name'" ng-click="setAttackChampion(champion)" ng-attr-title="{{champion.name}}">
-				<img ng-attr-src="{{champion.image_url}}" class="hvr-grow" data-dismiss="modal">
-			</li>
-		</ul>
+    		<ul>
+    			<li ng-repeat="champion in champions | filter: query | orderBy:'name'" ng-click="setAttackChampion(champion)" ng-attr-title="{{champion.name}}">
+    				<img ng-attr-src="{{champion.image_url}}" class="hvr-grow" data-dismiss="modal">
+    			</li>
+    		</ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
