@@ -1,4 +1,4 @@
-var app = angular.module('Champion', []);
+var app = angular.module('Champion', ['ngDragDrop']);
 app.controller('ChampionCtrl', function($scope, $http) {
 	var key = "40c0236b-48f3-4f53-93e5-4966062c87e7"; 
 	var api_version = "1.2";
@@ -48,8 +48,11 @@ app.controller('ChampionCtrl', function($scope, $http) {
 		$scope.defendChampion.items = [];
 	};
 	$scope.updateChampion = function(champion) {
-		
+
 	};
+	$scope.hideMe = function() {
+    	return $scope.attackChampion.items.length > 0;
+  	};
 });
 // var app.filter('championFilter', function() {
 // 	return function(champions, types) {

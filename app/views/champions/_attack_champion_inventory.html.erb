@@ -1,41 +1,28 @@
 <!-- Attack Champion Inventory Modal -->
-<script type="text/javascript">
-</script>
-<div class="modal fade" id="attackChampionInventory" tabindex="-1" role="dialog" aria-labelledby="attackChampionModalLabel">
+<div class="modal fade" id="attackChampionInventory" tabindex="-1" role="dialog" aria-labelledby="attackChampionModalLabel" ng-cloak>
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <input class="modal-title" id="attackChampionModalLabel" type="text" ng-model="itemQuery">
       </div>
-      <div class="modal-body">
-        <div class="attackChampionInventoryContainer inventoryContainer">
-          <table class="inventory" border="1">
-            <tbody>
-              <tr>
-                <td><div class="droppable ui-droppable"></div></td>
-                <td><div class="droppable ui-droppable"></div></td>
-                <td><div class="droppable ui-droppable"></div></td>
-              </tr>
-              <tr>
-                <td><div class="droppable ui-droppable"></div></td>
-                <td><div class="droppable ui-droppable"></div></td>
-                <td><div class="droppable ui-droppable"></div></td>
-              </tr>
-              <tr>
-                <td class="dragon"></td>
-                <td><div class="droppable ui-droppable"></div></td>
-                <td class="baron"></td>
-              </tr>
-            </tbody>
-          </table>  
+      <div class="modal-body contentWrapper">
+        <div>
+        <h2><a href="#">Gadgets</a></h2>
+          <div>
+            <ul>
+              <li ng-repeat='item in items' ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="items" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep'}">{{item.name}}</li>
+            </ul>
+          </div>
         </div>
-        <div class="itemsContainer">
-          <ul>
-            <li ng-repeat="item in items | filter: itemQuery">
-              <img ng-attr-src="{{item.image_url}}" class="hvr-grow draggable ui-draggable">
-            </li>
-          </ul>  
+        <div id="cart">
+            <h1 class="ui-widget-header">Shopping Cart</h1>
+            <div class="ui-widget-content">
+                <ol data-drop="true" ng-model='attackChampion.items' jqyoui-droppable="{multiple:true}">
+                    <li ng-repeat="item in attackChampion.items track by $index" ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="attackChampion.items" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</li>
+                    <li class="placeholder" ng-hide="hideMe()">Add your items here</li>
+                </ol>
+            </div>
         </div>
       </div>
       <div class="modal-footer">

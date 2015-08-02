@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require angular
 //= require angular-resource
+//= require angular-dragdrop
 //= require turbolinks
 //= require foundation
 //= require_tree .

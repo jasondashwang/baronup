@@ -36,6 +36,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    angular-dragdrop-rails (1.0.2)
+      angularjs-rails
+      jquery-rails
+      jquery-ui-rails
     angular-rails-templates (0.1.4)
       railties (>= 3.1)
       sprockets
@@ -157,6 +161,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angular-dragdrop-rails
   angular-rails-templates
   angularjs-rails
   bootstrap-sass

@@ -14,6 +14,6 @@
   </head>
   <body>
     <%=render :partial => "layouts/navbar"%>
-    <div class="container-fluid" ng-controller="ChampionCtrl"><%= yield %></div>
+    <div class="container-fluid" ng-controller="ChampionCtrl" ng-cloak><%= yield %></div>
   </body>
 </html>
