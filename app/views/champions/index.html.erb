@@ -49,25 +49,30 @@
 				<!-- Stat Table -->
 			</div>
 		</div>
-		<!-- Center -->
-		<div class="centerPiece col-md-6">
+		<!-- Center Attack -->
+		<div class="centerAttack col-md-3">
 			<!-- Attack Stats -->
 			<div class="attackStats" id="attackStats">
 				<%=render :partial => "attack_champion_table"%>
 			</div>
+
+			<!-- Attack Inventory -->
+			<div class="inventory">
+				<h4 class="textHeader">Your Inventory</h4>
+				<h4 class="spacer" id="attackInventory" data-toggle="modal" data-target="#attackChampionInventory"></h4>
+			</div>
+		</div>
+		<!-- Center Defense -->
+		<div class="centerDefense col-md-3">
 
 			<!-- Defense Stats -->
 			<div class="defenseStats" id="defenseStats">
 				<%=render :partial => "defend_champion_table"%>
 			</div>
 
-			<!-- Attack Inventory -->
-			<div class="inventory">
-				<h4 class="spacer" id="attackInventory" data-toggle="modal" data-target="#attackChampionInventory"></h4>
-			</div>
-
 			<!-- Defense Inventory -->
 			<div class="inventory">
+				<h4 class="textHeader">Target Inventory</h4>
 				<h4 class="spacer" id="defenseInventory" data-toggle="modal" data-target="#defendChampionInventory"></h4>
 			</div>
 		</div>
