@@ -22,11 +22,6 @@ app.controller('ChampionCtrl', function($scope, $http) {
 		for (var i in data["data"]) {
 			data["data"][i]["image_url"] = "http://ddragon.leagueoflegends.com/cdn/"+dd_version+"/img/champion/" + data["data"][i]["image"]["full"];
 			data["data"][i]["profile_image_url"] = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/"+i+"_"+data["data"][i]["skins"][0]["num"]+".jpg";
-			data["data"][i]["stats"]["criticaldamage"] = 200;
-			data["data"][i]["stats"]["cooldownreduction"] = 0;
-			data["data"][i]["stats"]["spellvamp"] = 0;
-			data["data"][i]["stats"]["lifesteal"] = 0;
-			data["data"][i]["stats"]["attackspeed"] = 40;
 			championArray.push(data["data"][i]);
 		};
 		$scope.champions = championArray;	
@@ -38,6 +33,11 @@ app.controller('ChampionCtrl', function($scope, $http) {
 		$scope.attackChampion.runes = [];
 		$scope.attackChampion.masteries = [];
 		$scope.attackChampion.items = [];
+		$scope.attackChampion.stats.criticaldamage = 200;
+		$scope.attackChampion.stats.cooldownreduction = 0;
+		$scope.attackChampion.stats.spellvamp = 0;
+		$scope.attackChampion.stats.lifesteal = 0;
+		$scope.attackChampion.stats.attackspeed = 40;
 	};
 	$scope.defendChampion = null;
 	$scope.setDefendChampion = function(champion) {
@@ -46,6 +46,11 @@ app.controller('ChampionCtrl', function($scope, $http) {
 		$scope.defendChampion.runes = [];
 		$scope.defendChampion.masteries = [];
 		$scope.defendChampion.items = [];
+		$scope.attackChampion.stats.criticaldamage = 200;
+		$scope.attackChampion.stats.cooldownreduction = 0;
+		$scope.attackChampion.stats.spellvamp = 0;
+		$scope.attackChampion.stats.lifesteal = 0;
+		$scope.attackChampion.stats.attackspeed = 40;
 	};
 	$scope.updateChampion = function(champion) {
 

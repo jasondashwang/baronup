@@ -24,7 +24,7 @@
         <div class="itemContainer itemSelect">
           <div>
             <ul>
-              <li ng-repeat='item in items' ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="items" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep'}"><img src="{{item.image_url}}" ng-click="setCurrentItem(item)"></li>
+              <li ng-repeat='item in items' ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="items" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep'}"><img src="{{item.image_url}}" onmousedown="setCurrentItem(item)" ng-click="setCurrentItem(item)"></li>
             </ul>
           </div>
         </div>
