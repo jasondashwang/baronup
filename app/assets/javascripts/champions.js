@@ -53,6 +53,23 @@ app.controller('ChampionCtrl', function($scope, $http) {
 	$scope.hideMe = function() {
     	return $scope.attackChampion.items.length > 0;
   	};
+  	$scope.itemOptions = {
+	    accept: function(dragEl) {
+	      	if ($scope.attackChampion.items.length >= 6) {
+	        	return false;
+	      	} else {
+	        	return true;
+	      	}
+	    }
+	};
+	$scope.removeItem = function(index, champion) {
+    	champion.items.splice(index, 1);
+  	};
+
+  	$scope.currentItem = null;
+  	$scope.setCurrentItem = function(item) {
+    	$scope.currentItem = item;
+  	};
 });
 // var app.filter('championFilter', function() {
 // 	return function(champions, types) {

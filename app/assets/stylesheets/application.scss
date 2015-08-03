@@ -140,13 +140,12 @@ table {
 	}
 	.levelSelector {
 		width: 231px;
-		height: 60px;
+		height: 30px;
 
 		.levelRangeSliderContainer {
 			
 		}
-		.levelOutputContainer {
-		margin-top: 16px;
+		.levelOutputContainer {		
 		}
 	}
 	.btn {
@@ -205,6 +204,45 @@ table {
 }
 .inventory {
 	margin-top: 10px;
+}
+#attackChampionInventory {
+	.itemContainer {
+		width:50%;
+		display: block;
+		float: left;
+		.itemSelect {
+		}
+		#attackChampionItems {
+			height: 50%;
+		}
+		.ui-widget-content {
+			height: 100px;
+			ol {
+				height: 100%;
+				list-style-type: none;
+				li {
+					display: block;
+					float: left;
+					img {
+						width: 50px;
+						height: 50px;
+					}
+				}
+			}
+		}
+	}
+	ul {
+		height: 100%;
+		list-style-type: none;
+		li {
+			display: block;
+			float: left;
+			img {
+				width: 55px;
+				height: 55px;
+			}
+		}
+	}
 }
 /* Misc. */
 .spacer{

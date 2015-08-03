@@ -28,13 +28,10 @@
 				<div class="levelSelector">
 					<div class="row">
 					  	<div class="levelRangeSliderContainer col-md-10">
-					    	<div class="range-slider" data-slider data-options="start: 1; end: 18;display_selector: #attackChampionLevel;">
-						      	<span class="range-slider-handle" role="slider" tabindex="0"></span>
-						     	<span class="range-slider-active-segment"></span>
-					    	</div>
+					  		<input type="range" min="1" max="18" ng-model="attackChampion.level">
 					  	</div>
 					  	<div class="levelOutputContainer col-md-2">
-					    	<span id="attackChampionLevel" ng-model="attackChampion.level"></span>
+					    	{{attackChampion.level}}
 					  	</div>
 					</div>
 				</div>
@@ -94,13 +91,10 @@
 				<div class="levelSelector">
 					<div class="row">
 					  	<div class="levelRangeSliderContainer col-md-10">
-					    	<div class="range-slider" data-slider data-options="start: 1; end: 18;display_selector: #defendChampionLevel;">
-						      	<span class="range-slider-handle" role="slider" tabindex="0"></span>
-						     	<span class="range-slider-active-segment"></span>
-					    	</div>
+					    	<input type="range" min="1" max="18" ng-model="defendChampion.level">
 					  	</div>
 					  	<div class="levelOutputContainer col-md-2">
-					    	<span id="defendChampionLevel" ng-model="defendChampion.level"></span>
+					    	{{defendChampion.level}}
 					  	</div>
 					</div>
 				</div>

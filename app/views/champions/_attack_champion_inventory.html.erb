@@ -1,32 +1,36 @@
 <!-- Attack Champion Inventory Modal -->
-<div class="modal fade" id="attackChampionInventory" tabindex="-1" role="dialog" aria-labelledby="attackChampionModalLabel" ng-cloak>
+<div class="modal fade" id="attackChampionInventory" tabindex="-1" role="dialog" aria-labelledby="attackChampionModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <input class="modal-title" id="attackChampionModalLabel" type="text" ng-model="itemQuery">
+        <h1 class="modal-title">Attack Champion Inventory</h1>
       </div>
       <div class="modal-body contentWrapper">
-        <div>
-        <h2><a href="#">Gadgets</a></h2>
+        <div id="attackChampionItems" class="itemContainer">
+          <div class="ui-widget-content">
+              <ol data-drop="true" ng-model='attackChampion.items' jqyoui-droppable="{multiple:true}" data-jqyoui-options="itemOptions">
+                  <li ng-repeat="item in attackChampion.items track by $index" ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="attackChampion.items" jqyoui-draggable="{index: {{$index}},animate:true}"><span class="imageContainer" ng-click="removeItem($index, attackChampion)"><img src="{{item.image_url}}"></span></li>
+                  <li class="placeholder" ng-hide="hideMe()">Add your items here</li>
+              </ol>
+          </div>
+          <input class="modal-title" id="attackChampionModalLabel" type="text" ng-model="itemQuery">
+          <div id="currentItem" ng-show="currentItem">
+            <img src="{{currentItem.image_url}}">
+            <h4>{{currentItem.name}}</h4>
+            <p>{{currentItem.sanitizedDescription}}</p>
+          </div>
+        </div>
+        <div class="itemContainer itemSelect">
           <div>
             <ul>
-              <li ng-repeat='item in items' ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="items" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep'}">{{item.name}}</li>
+              <li ng-repeat='item in items' ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="items" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep'}"><img src="{{item.image_url}}" ng-click="setCurrentItem(item)"></li>
             </ul>
           </div>
         </div>
-        <div id="cart">
-            <h1 class="ui-widget-header">Shopping Cart</h1>
-            <div class="ui-widget-content">
-                <ol data-drop="true" ng-model='attackChampion.items' jqyoui-droppable="{multiple:true}">
-                    <li ng-repeat="item in attackChampion.items track by $index" ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="attackChampion.items" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</li>
-                    <li class="placeholder" ng-hide="hideMe()">Add your items here</li>
-                </ol>
-            </div>
-        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismis="modal">Close</button>
       </div>
     </div>
   </div>
